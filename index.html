@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first website</title>
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+    <p>Welcome to my first website.</p>
+    <h2>Web Security</h2>
+    <p id="web-security-question">How would you advise a potential client to secure his/her website from web security attacks? Note: the word count for your answer should not be greater than 250 words</p>
+    <p id="web-security-answer">I would recommend choosing a hosting service that offers an SSL or TLS certificate so that all the data moving between the server and web-browser is encrypted. This will also allow you to use the HTTPS protocol. 
+
+        For user supplied input especially sensitive like credit card information Aswell as the URL you should set up a validation pattern to avoid XSS. You also need to sanitize the input element by escaping and turning it into html entities, rendering malicious scripts from running inert. 
+        
+        As the client you should also limit privileges to your employees, only give them access based on the features they need, if the employee only needs to be able to edit the website, they should not have the option to add/delete users. 
+        
+        Some potential security risks will depend on what kind of website it is. But for those with sensitive information I would recommend Requiring a strong password and/or two-factor authentication. 
+        
+        Disable HTTP redirections. This might not be a security problem for your site, but you do not want a client to be redirected from your site to a site they can be compromised on. 
+        
+        With all of this implemented you should have someone test the code, an experienced developer who is familiar with security risks and third-party applications like Pentest tools. </p>
+  </body>
+</html>
