@@ -1,18 +1,69 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My first website</title>
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-    <p>Welcome to my first website.</p>
-    <h2>Web Security</h2>
-    <p id="web-security-question">How would you advise a potential client to secure his/her website from web security attacks? Note: the word count for your answer should not be greater than 250 words</p>
-    <p id="web-security-answer">I would recommend choosing a hosting service that offers an SSL or TLS<br>certificate so that all the data moving between the server and web-browser is <br> encrypted. This will also allow you to use the HTTPS protocol. 
-        <br><br>For user supplied input, especially sensitive like credit card information<br>Aswell as the URL you should set up a validation pattern to avoid XSS.<br>You also need to sanitize the input element by escaping and turning it into html<br>entities, rendering malicious scripts from running inert. 
-        <br><br>As the client you should also limit privileges to your employees, only give<br>them access based on the features they need, if the employee only needs to be<br>able to edit the website, they should not have the option to add/delete users. 
-        <br><br>Some potential security risks will depend on what kind of website it is. But<br>for those with sensitive information I would recommend Requiring a strong<br>password and/or two-factor authentication. 
-        <br><br>Disable HTTP redirections. This might not be a security problem for your<br>site, but you do not want a client to be redirected from your site to a site<br>they can be compromised on. 
-        <br><br>With all of this implemented you should have someone test the code, an<br>experienced developer who is familiar with security risks and third-party<br>applications like Pentest tools. </p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameHub a marketplace that lets you buy tons of videogames online for any device">
+  <title>Game Hub | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">GameHub</a>
+      <input type="text" placeholder="Search">
+      <ul>
+        <li><a href="#">BROWSE GAMES</a></li>
+        <li><a href="#">SELL GAMES</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SIGN IN</a></li>
+        <li><a href="#">CART</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>NEW RELEASES</h2>
+      <img src="#" alt="Space War">
+      <p class="price">$29.00</p>
+    </section>
+    <section>
+      <h2>SPRING SALE</h2>
+      <img src="#" alt="Games on sale"> <!--add in css?-->
+    </section>
+    <section>
+      <h2>BROWSE BY CATEGORY</h2>
+      <ul>
+        <li><a href="#"></a>ALL GAMES</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    copyright &copy;
+    <p>Gamehub.com all rights reserved</p>
+    <ul>
+      <li>For buyers</li>
+      <li>How to buy</li>
+      <li>Terms & conditions</li>
+      <li>Sitemap</li>
+    </ul>
+    <ul>
+      <li>For sellers</li>
+      <li>How to sell</li>
+      <li>Buisness info</li>
+    </ul>
+    <p>follow us on socials</p>
+    <ul>
+      <li>Facebook</li>
+      <li>Twitter</li>
+      <li>Tiktok</li>
+    </ul>
+  </footer>
+  
+</body>
 </html>

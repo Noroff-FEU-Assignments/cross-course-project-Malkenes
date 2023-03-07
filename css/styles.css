@@ -1,0 +1,29 @@
+body {
+    color: #FFF;
+    background-color: #1F1F1F;
+    font-family: "nunito sans",sans-serif;
+}
+header {
+    background-color: #1A1F3C;
+    padding-bottom: 10%;
+    
+}
+nav a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: 900;
+    background-color: #000;
+}
+h2 {
+    font-weight: 600;
+}
+.price {
+    font-family: "roboto",sans-serif ;
+}
+footer {
+    background-color: #000;
+    
+}
