@@ -1,12 +1,17 @@
+.boxed {
+    background-color: #000;
+}
 body {
     color: #FFF;
     background-color: #1F1F1F;
     font-family: "nunito sans",sans-serif;
+    font-size: 14px;
 }
 header {
     background-color: #1A1F3C;
     padding-bottom: 10%;
-    
+    font-weight: 600;
+    font-size: 20px;
 }
 nav a {
     color: #FFF;
@@ -15,15 +20,24 @@ nav a {
 
 h1 {
     font-weight: 900;
-    background-color: #000;
+    font-size: 36px;
 }
 h2 {
     font-weight: 600;
+    font-size: 20px;
 }
 .price {
     font-family: "roboto",sans-serif ;
 }
 footer {
     background-color: #000;
+    
+}
+.button a {
+    font-weight: 900;
+    font-size: 20px;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #1A1F3C;
     
 }
