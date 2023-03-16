@@ -27,13 +27,54 @@
       </ul>
     </nav>
   </header>
-  <main>
-    <section class="boxed">
-      <div>
-        <h2>Delivery information</h2>
+  <main class="checkout-page">
+    <section class="boxed checkout">
+      <h2>CHECKOUT</h2>
+      <div class="checkout-product">
+        <img src="/images/Image00006.jpg" alt="space war" class="checkout__image">
+        <h2>SPACE WAR</h2>
+        <input type="number" id="add-cart" min="1" max="10" placeholder="1">
+        <i>thrash can</i>
+        <p class="price">$29.00</p>
       </div>
-      <div>
+      <div class="checkout-product">
+        <img src="/images/Image00002.jpg" alt="super duper" class="checkout__image">
+        <h2>SUPER DUPER</h2>
+        <input type="number" id="add-cart" min="1" max="10" placeholder="1">
+        <i>thrash can</i>
+        <p class="price">$19.00</p>
+        <p class="discount">34%</p>
+        <p class="old-price">$29.00</p>
+      </div>
+      <div class="checkout-product">
+        <h2>TOTAL</h2>
+        <p class="price">$48.00</p>
+        <p class="old-price">$58.00</p>
+      </div>
+    </section>
+    <section class="boxed delivery">
+      <div class="delivery-information">
+        <h2>Delivery information</h2>
+        <input type="text" id="first-name" placeholder="First name">
+        <input type="text" id="last-name" placeholder="Last name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="tel" id="phone" placeholder="Phone">
+        <input type="text" id="street" placeholder="Street">
+        <select name="country" id="country">
+          <option value="norway">Norway</option>
+          <option value="sweden">Sweden</option>
+          <option value="denmark">Denmark</option>
+          <option value="united-kingdom">United Kingdom</option>
+        </select>
+        <input type="text" id="region" placeholder="Region">
+      </div>
+      <div class="billing-information">
         <h2>Billing information</h2>
+        <label for="card-info">Card information</label>
+        <input type="number" id="card-info" placeholder="xxxx-xxxx-xxxx-xxxx">
+        <label for="experation">Experation date</label>
+        <input type="month" id="experation">
+        <input type="text" id="cvc" placeholder="CVC">
       </div>
       <div class="button">
         <a href="checkout_success.html">PAY NOW</a>
@@ -43,10 +84,7 @@
         <a href="sign_in.html">SIGN IN</a>
       </div>
     </section>
-    <section class="boxed">
-      <h2>Checkout</h2>
-    </section>
-    <section class="boxed">
+    <section class="boxed recommended">
       <h2>Other games you might like</h2>
     </section>
   </main>

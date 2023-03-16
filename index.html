@@ -11,46 +11,53 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
+    <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars"></i></label>
+    <label for="search-bar" class="search-icon"><i class="fas fa-search"></i></label>
+    <input type="checkbox" id="search-bar">
+    <input type="text" placeholder="Search" class="search">
     <nav>
-      <a href="index.html">GameHub</a>
-      <input type="text" placeholder="Search">
       <ul>
-        <li><a href="browse_games.html">BROWSE GAMES</a></li>
-        <li><a href="sell_games.html">SELL GAMES</a></li>
+        <li><a href="browse_games.html">BROWSE</a></li>
+        <li><a href="sell_games.html">SELL</a></li>
         <li><a href="contact.html">CONTACT</a></li>
         <li><a href="about.html">ABOUT</a></li>
-        <li><a href="sign_in.html">SIGN IN</a></li>
-        <li><a href="checkout.html">CART</a></li>
       </ul>
     </nav>
+    <a href="checkout.html"><i class="fas fa-bag-shopping"></i></a>
+    <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
   </header>
-  <main>
-    <section>
+  <main class="home">
+    <section class="new-releases">
       <h2>NEW RELEASES</h2>
-      <a href="games/template.html"><img src="#" alt="Space War"></a>
-      <p class="price">$29.00</p>
+      <a href="games/template.html" class="new-releases__img">
+        <img src="images/Space_war_cropped.jpg" alt="Space War" class="promoted__image">
+        <p class="price">$29.00</p>
+      </a>
     </section>
-    <section>
+    <section class="sales">
       <h2>SPRING SALE</h2>
-      <img src="#" alt="Games on sale"> <!--add in css?-->
+      <img src="images/Spring-sale.jpg" alt="Games on sale" class="sales__image"> <!--add in css?-->
     </section>
-    <section>
+    <section class="browse-by-category">
       <h2>BROWSE BY CATEGORY</h2>
-      <ul>
-        <li><a href="browse_games.html">ALL GAMES</a></li>
-        <li><a href="browse_games.html">ACTION</a></li>
-        <li><a href="browse_games.html">ADVENTURE</a></li>
-        <li><a href="browse_games.html">SPORT</a></li>
-        <li><a href="browse_games.html">RPG</a></li>
-        <li><a href="browse_games.html">FOR CHILDREN</a></li>
-        <li><a href="browse_games.html">ADULT</a></li>
-        <li><a href="browse_games.html">SIMULATION</a></li>
-        <li><a href="browse_games.html">RELAXED</a></li>
-        <li><a href="browse_games.html">OPEN WORLD</a></li>
-      </ul>
+      <div class="category">
+        <a href="browse_games.html">ALL GAMES</a>
+        <a href="browse_games.html">ACTION</a>
+        <a href="browse_games.html">ADVENTURE</a>
+        <a href="browse_games.html">SPORT</a>
+        <a href="browse_games.html">RPG</a>
+        <a href="browse_games.html">FOR CHILDREN</a>
+        <a href="browse_games.html">ADULT</a>
+        <a href="browse_games.html">SIMULATION</a>
+        <a href="browse_games.html">RELAXED</a>
+        <a href="browse_games.html">OPEN WORLD</a>
+      </div>
     </section>
   </main>
   <footer>
