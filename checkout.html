@@ -11,21 +11,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <header>
+    <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars"></i></label>
+    <label for="search-bar" class="search-icon"><i class="fas fa-search"></i></label>
+    <input type="checkbox" id="search-bar">
+    <input type="text" placeholder="Search" class="search">
     <nav>
-      <a href="index.html">GameHub</a>
-      <input type="text" placeholder="Search">
       <ul>
-        <li><a href="browse_games.html">BROWSE GAMES</a></li>
-        <li><a href="sell_games.html">SELL GAMES</a></li>
+        <li><a href="browse_games.html">BROWSE</a></li>
+        <li><a href="sell_games.html">SELL</a></li>
         <li><a href="contact.html">CONTACT</a></li>
         <li><a href="about.html">ABOUT</a></li>
-        <li><a href="sign_in.html">SIGN IN</a></li>
-        <li><a href="checkout.html">CART</a></li>
       </ul>
     </nav>
+    <a href="checkout.html"><i class="fas fa-bag-shopping"></i></a>
+    <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
   </header>
   <main class="checkout-page">
     <section class="boxed checkout">
@@ -33,15 +39,19 @@
       <div class="checkout-product">
         <img src="/images/Image00006.jpg" alt="space war" class="checkout__image">
         <h2>SPACE WAR</h2>
-        <input type="number" id="add-cart" min="1" max="10" placeholder="1">
-        <i>thrash can</i>
+        <div class="trash">
+          <input type="number" id="add-cart" min="1" max="10" placeholder="1">
+          <i class="fas fa-trash"></i>
+        </div>
         <p class="price">$29.00</p>
       </div>
       <div class="checkout-product">
         <img src="/images/Image00002.jpg" alt="super duper" class="checkout__image">
         <h2>SUPER DUPER</h2>
-        <input type="number" id="add-cart" min="1" max="10" placeholder="1">
-        <i>thrash can</i>
+        <div class="trash">
+          <input type="number" id="add-cart" min="1" max="10" placeholder="1">
+          <i class="fas fa-trash"></i>
+        </div>
         <p class="price">$19.00</p>
         <p class="discount">34%</p>
         <p class="old-price">$29.00</p>

@@ -33,13 +33,300 @@
     <a href="checkout.html"><i class="fas fa-bag-shopping"></i></a>
     <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
   </header>
-  <main>
-    <section>
-      <select name="category" id="category">
-        <option value="all-games">All Games</option>
-        <option value="action">Action</option>
-      </select>
-      
+  <main class="browse">
+    <section class="filter">
+      <input type="checkbox" name="console" id="console-checkbox">
+      <label for="console-checkbox" class="console-icon">choose console</label>
+      <input type="checkbox" name="category" id="category-checkbox">
+      <label for="category-checkbox" class="category-icon">choose category</output></label>
+      <fieldset class="boxed choose-console">
+        <legend>Console</legend>
+        <input type="radio" id="playbox" name="console" value="playbox">
+        <label for="playbox">PLAYBOX</label>
+        <input type="radio" id="windows" name="console" value="windows">
+        <label for="playbox">WINDOWS</label>
+        <input type="radio" id="mac" name="console" value="mac">
+        <label for="playbox">MAC</label>
+        <input type="radio" id="psp" name="console" value="psp">
+        <label for="playbox">PSP</label>
+      </fieldset>
+      <fieldset class="boxed choose-category">
+        <legend>Category</legend>
+        <input type="checkbox" id="all_games" name="category" value="all_games">
+        <label for="all_games">ALL GAMES</label>
+        <input type="checkbox" id="action" name="category" value="action">
+        <label for="action">ACTION</label>
+        <input type="checkbox" id="adventure" name="category" value="adventure">
+        <label for="adventure">ADVENTURE</label>
+        <input type="checkbox" id="sport" name="category" value="sport">
+        <label for="sport">SPORT</label>
+        <input type="checkbox" id="rpg" name="category" value="rpg">
+        <label for="rpg">RPG</label>
+        <input type="checkbox" id="for_children" name="category" value="for_children">
+        <label for="for_children">FOR CHILDREN</label>
+        <input type="checkbox" id="adult" name="category" value="adult">
+        <label for="adult">ADULT</label>
+        <input type="checkbox" id="simulation" name="category" value="simulation">
+        <label for="simulation">SIMULATION</label>
+        <input type="checkbox" id="relaxed" name="category" value="relaxed">
+        <label for="relaxed">RELAXED</label>
+        <input type="checkbox" id="open_world" name="category" value="open_world">
+        <label for="open_world">OPEN WORLD</label>
+      </fieldset>
+    </section>
+    <section class="game-list">
+      <a href="games/template.html" class="game-container">
+        <h3>PING PONG CHAMPIONSHIP</h3>
+        <div class="game-container_image">
+          <img src="images/Image00001.jpg" alt="ping pong championship gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+            <i class="fa-brands fa-microsoft"></i>
+            <i class="fa-brands fa-apple"></i>
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$29.00</p>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>SUPER DUPER</h3>
+        <div class="game-container_image">
+          <img src="images/Image00002.jpg" alt="super duper gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <div class="game-container_discount">
+          <p class="price">$19.00</p>
+          <p class="old-price">$29.00</p>
+        </div> 
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>BLACK</h3>
+        <div class="game-container_image">
+          <img src="images/Image00003.jpg" alt="black gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>FURIOUS</h3>
+        <div class="game-container_image">
+          <img src="images/Image00004.jpg" alt="furious gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+            <i class="fa-brands fa-apple"></i>
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>ASSASSIN</h3>
+        <div class="game-container_image">
+          <img src="images/Image00005.jpg" alt="assassin gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
+      <a href="games/space_war.html" class="game-container">
+        <h3>SPACE WAR</h3>
+        <div class="game-container_image">
+          <img src="images/Image00006.jpg" alt="space war gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>RACING</h3>
+        <div class="game-container_image">
+          <img src="images/Image00007.jpg" alt="racing gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <div class="game-container_discount">
+          <p class="price">$9.00</p>
+          <p class="old-price">$49.00</p>
+        </div>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>BOXER</h3>
+        <div class="game-container_image">
+          <img src="images/Image00008.jpg" alt="boxer gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>CYBERPUNK</h3>
+        <div class="game-container_image">
+          <img src="images/Image00009.jpg" alt="cyberpunk gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>FORGE LEGEND</h3>
+        <div class="game-container_image">
+          <img src="images/Image00010.jpg" alt="forge legend gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <div class="game-container_discount">
+          <p class="price">$39.00</p>
+          <p class="old-price">$69.00</p>
+        </div>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>SUPER DUPER</h3>
+        <div class="game-container_image">
+          <img src="images/Image00002.jpg" alt="super duper gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
+      <a href="games/template.html" class="game-container">
+        <h3>SUPER DUPER</h3>
+        <div class="game-container_image">
+          <img src="images/Image00002.jpg" alt="super duper gamecover">
+        </div>
+        <div class="game-container_background">
+          <div class="game-container_console">
+            <img src="images/playbox_logo.jpg" alt="for playbox">
+          </div>
+          <div>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            (0)
+          </div>
+        </div>
+        <p class="price">$19.00</p>
+      </a>
     </section>
   </main>
   <footer>
