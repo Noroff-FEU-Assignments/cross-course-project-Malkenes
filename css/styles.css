@@ -1,0 +1,659 @@
+/* header */
+nav,
+.search,
+#menu-checkbox,
+#search-bar {
+    display: none;
+}
+
+#menu-checkbox:checked ~ nav {
+    display: block;
+}
+
+#search-bar:checked ~ .search {
+    display: block;
+    position: absolute;
+    top: 110%;
+    width: 90%;
+}
+.logo {
+    margin: 0 10px;
+}
+
+.search {
+    position: relative;
+    min-width: 100px;
+    padding: 5px;
+    margin: 0 10px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    position: relative;
+    background: linear-gradient(#1A1F3C 76px , #FFF 14px);
+    align-items: center;
+    justify-content: space-around;
+}
+
+header i {
+    flex: 1;
+    font-size: 24px;
+    padding: 10px;
+    color: #FFF;
+}
+
+nav ul li {
+    display: block;
+    padding: 10px 20px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    padding: 0 10px 0 0;
+}
+nav a {
+    display: block;
+}
+nav {
+    position: absolute;
+    background: #1A1F3C;
+    top: 100%;
+    left: 0;
+    z-index: 4;
+}
+.hamburger-icon , .search-icon {
+    order: -1;
+}
+
+nav ul {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+/* footer */
+footer {
+    background-color: #000;
+    display: flex;
+    flex-direction: column-reverse;
+}
+footer i {
+    font-size: 32px;
+}
+.buyers,
+.sellers {
+    display: none;
+}
+footer li {
+    display: block;
+}
+
+/* general */
+.boxed {
+    background-color: #00000071;
+    background-blend-mode: overlay;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 20px;
+}
+body {
+    color: #FFF;
+    background-color: #1F1F1F;
+    font-family: "nunito sans",sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 36px;
+}
+h2 {
+    font-weight: 600;
+    font-size: 20px;
+}
+.price {
+    font-family: "roboto",sans-serif;
+    color: #FFF;
+    font-size: 30px;
+}
+.old-price {
+    font-family: "roboto",sans-serif;
+    color: #FFF;
+    font-size: 20px;
+    text-decoration: line-through;
+}
+.button {
+    font-weight: 900;
+    font-size: 20px;
+    text-decoration: none;
+    color: #FFF;
+    background-color: #1A1F3C;
+    padding: 10px;
+    border: solid;
+    border-radius: 10px;   
+}
+main {
+    margin: 16px auto;
+}
+.background-tag {
+    background: #1A1F3C;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+/* forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+form input,
+form select,
+form textarea {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+/* home */
+.home {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "releases"
+    "sales"
+    "category" 
+    ;
+}
+
+.new-releases {
+    grid-area: releases;
+    margin: 10px;
+}
+.carousel-wrapper {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: block;
+}
+.carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+}
+[id^="game"] {
+    display: none;
+}
+.game-1 {
+    background: url(../images/new_releases_space_war.jpg);
+    z-index: 2;
+    opacity: 1;
+    background-size:cover;
+    background-position: 50%;
+    
+}
+.game-2 {
+    background: url(../images/new_releases_racing.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+.game-3 {
+    background: url(../images/new_releases_super_duper.jpg);
+    background-size: cover;
+    background-position: 50%;
+}
+*:target ~ .game-1 {
+    opacity: 0;
+}
+#game-1:target ~ .game-1 {
+    opacity: 1;
+}
+#game-2:target ~ .game-2 , #game-3:target ~ .game-3 {
+    z-index: 3;
+    opacity: 1;
+}
+.carousel-item p {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    background-color: #1A1F3C;
+    border: solid;
+}
+.carousel-navbar {
+    display: flex;
+    justify-content: center;
+}
+.circle {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: solid white 2px;
+    margin: 10px;
+}
+
+
+.game-info {
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    bottom: 20%;
+    width: 50%;
+    background: #1A1F3C;
+}
+.sales {
+    grid-area: sales;
+    margin: 10px;
+}
+
+.browse-by-category {
+    grid-area: category;
+    margin: 10px;
+}
+
+.category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category a {
+    min-width: 150px;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px;
+    color: #FFF;
+    background: #1A1F3C;
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px;
+}
+
+.sales__image {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+.new-releases_img{
+    background: #1A1F3C;
+    border: solid;
+    border-color: #FFF;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 5px;
+}
+.promoted__image {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 10px;
+}
+/* about */
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.about section {
+    flex: 1;
+    margin: 20px 0;
+    padding: 0px 20px;
+}
+
+.about h1 {
+    text-align: center;
+}
+
+.img__gamers {
+    background-image: url(../images/pexels-yan-krukau-9072247\ \(1\).jpg);
+    background-size: cover;
+}
+
+.img__vr {
+    background-image: url(../images/pexels-oleksandr-pidvalnyi-6853428.jpg);
+    background-size: cover;
+}
+
+.img__controler {
+    background-image: url(../images/pexels-mikhail-nilov-7887382.jpg);
+    background-size: cover;
+}
+
+/* checkout */
+.checkout-page {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "checkout"
+    "delivery"
+    "recommended"
+    ;
+}
+.checkout {
+    grid-area: checkout;
+}
+.delivery {
+    grid-area: delivery;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recommended {
+    grid-area: recommended;
+}
+
+.additional_information img {
+    width: 20%;
+}
+
+.checkout-product {
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40px 30px 30px;
+    grid-template-areas: 
+    "game-cover title title"
+    "game-cover items price"
+    "game-cover discount new-price";
+}
+
+.checkout__image {
+    grid-area: game-cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.checkout-product h2 {
+    grid-area: title;
+    align-self: center;
+}
+.trash {
+    grid-area: items;
+    align-self: center;
+}
+.trash input {
+    width: 20%;
+}
+.checkout-product .price {
+    grid-area: price;
+    font-size: 30px;
+    align-self: center;
+}
+.checkout-product .old-price {
+    grid-area: new-price;
+    align-self: center;
+}
+.checkout-product .discount{
+    grid-area: discount;
+    align-self: center;
+}
+#cvc {
+    width: 10%;
+}
+form .button {
+    justify-content: center;
+    margin: 10px;
+}
+
+/* product details */
+
+.product_details {
+    display: grid;
+    grid-template-areas: "description"
+    "product_images"
+    "information"
+    "review";
+}
+.product_images {
+    grid-area: product_images;
+    margin: 20px;
+}
+.product_images img {
+    object-fit: contain;
+    max-width: 100%;
+}
+.gameplay_images img {
+    width: 65px;
+    height: 65px;
+    margin: 10px;
+}
+.description {
+    grid-area: description;
+}
+.additional_information {
+    grid-area: information;
+}
+.review {
+    grid-area: review;
+    display: inherit;
+}
+.stars {
+    justify-content: flex-start;
+}
+textarea {
+    resize: none;
+}
+/* browse games */
+
+.browse {
+    display: flex;
+    flex-direction: column;
+}
+.filter {
+    margin: 16px auto;
+}
+.browse fieldset,
+#console-checkbox,
+#category-checkbox {
+    display: none;
+    position: absolute;
+    background: #000;
+}
+
+#console-checkbox:checked ~ fieldset.choose-console,
+#category-checkbox:checked ~ fieldset.choose-category {
+    display: grid;
+}
+.console-icon,
+.category-icon {
+    color: #000;
+    background: #FFF;
+    padding: 5px;
+    margin: 16px;
+    border-radius: 16px;
+}
+fieldset {
+    width:80%;
+    right: 0;
+    display: grid;
+    grid-template-columns: 2em 5em;
+    grid-template-rows: auto;
+}
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.game-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: auto;
+    margin: 8px;
+    text-decoration: none;
+    color: #FFF;
+}
+.game-container h3 {
+    position: absolute;
+    background:#1A1F3C;
+    width: 200px;
+    text-align: center;
+    margin: 0;
+    padding: 16px 0;
+    display: none;
+}
+.game-container:hover h3 {
+    display: block;
+}
+.game-container .price,
+.game-container .old-price {
+    margin: 10px 0;
+}
+.game-container_image img {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+.game-container_background {
+    display: flex;
+    flex-direction: column;
+    background: #1A1F3C;
+    padding: 10px;
+}
+
+.game-container_console img {
+    height: 14px;
+    width: fit-content;
+}
+.game-container_discount {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* sign in */
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+}
+#hide {
+    display: none;
+}
+.delivery-information {
+    max-width: 400px;
+}
+.create-account {
+    display: none;
+}
+#hide:checked ~ .sign-in .existing-account {
+    display: none;
+} 
+#hide:checked ~ .sign-in .create-account {
+    display: flex;
+}
+
+
+@media (min-width: 800px) {
+    main {
+        max-width: 1200px;
+    }
+    /* header */
+    nav {
+        display: flex;
+        position: static;
+        background: none;
+        flex: 1;
+        justify-content: end;
+    }
+    .search {
+        display: block;
+    }
+    .search-icon {
+        display: none;
+    }
+    .hamburger-icon {
+        display: none;
+    }
+    nav ul li {
+        display: inline-flex;
+        flex-wrap: wrap;
+        padding: 0px 0px;
+    }
+    /* footer */
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sellers , .buyers {
+        display: block;
+    }
+
+    /* home */
+    .home {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "releases releases sales"
+        "category category category"
+        ;
+    }
+
+    /* about */
+    .about {
+        flex-direction: row;
+        min-height: 600px;
+    }
+
+    .about section {
+        margin: 20px 50px;
+    }
+
+    /* checkout */
+    .checkout-page {
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "delivery checkout"
+        ". recommended";
+    }
+
+    /* product details */
+    .product_details {
+        grid-template-rows: auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+        "product_images description information"
+        "product_images description review";
+    }
+    .product_details section {
+        margin: 20px 0;
+        border-radius: 0;
+    }
+
+    /* browse games */
+    .browse {
+        flex-direction: row;
+        align-items: normal;
+    }
+    .browse fieldset {
+        display: grid;
+        position: relative;
+        width: max-content;
+    }
+    .console-icon,
+    .category-icon {
+        display: none;
+    }
+    /* sign in */
+    .sign-in {
+        align-items: center;
+    }
+}

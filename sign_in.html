@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GameHub a marketplace that lets you buy tons of videogames online for any device">
-  <title>Game Hub | Home</title>
+  <meta name="description" content="Sign in for a personalized selection">
+  <title>Game Hub | Sign in</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,50 +32,31 @@
     <a href="checkout.html"><i class="fas fa-bag-shopping"></i></a>
     <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
   </header>
-  <main class="home">
-    <section class="new-releases">
-      <h2>NEW RELEASES</h2>
-      <div class="carousel-wrapper">
-        <span id="game-1"></span>  
-        <span id="game-2"></span>
-        <span id="game-3"></span>
-        <a href="games/space_war.html" class="carousel-item game-1">
-          <p class="price">$29.00</p>  
-        </a>
-        <a href="games/template.html" class="carousel-item game-2">
-          <p class="price">$39.00</p>
-        </a>
-        <a href="games/template.html" class="carousel-item game-3">
-          <p class="price">$59.00</p>
-        </a>
-      </div>
-      <div class="carousel-navbar">
-        <a href="#game-1" class="circle"></a>
-        <a href="#game-2" class="circle"></a>
-        <a href="#game-3" class="circle"></a>
-      </div>
-    </section>
-    <section class="sales">
-      <h2>SPRING SALE</h2>
-      <img src="images/Spring-sale.jpg" alt="Games on sale" class="sales__image"> <!--add in css?-->
-      <div class="game-info">
-        <p>We are doing some spring cleaning get up to 80% off on selected games</p>
-      </div>
-    </section>
-    <section class="browse-by-category">
-      <h2>BROWSE BY CATEGORY</h2>
-      <div class="category">
-        <a href="browse_games.html">ALL GAMES</a>
-        <a href="browse_games.html">ACTION</a>
-        <a href="browse_games.html">ADVENTURE</a>
-        <a href="browse_games.html">SPORT</a>
-        <a href="browse_games.html">RPG</a>
-        <a href="browse_games.html">FOR CHILDREN</a>
-        <a href="browse_games.html">ADULT</a>
-        <a href="browse_games.html">SIMULATION</a>
-        <a href="browse_games.html">RELAXED</a>
-        <a href="browse_games.html">OPEN WORLD</a>
-      </div>
+  <main>
+    <input type="checkbox" id="hide">
+    <section class=" sign-in">
+      <form action="index.html" class="boxed existing-account">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button class="button">SIGN IN</button>
+      </form>
+      <form action="" class="boxed create-account">
+        <input type="text" id="first-name" placeholder="First name">
+        <input type="text" id="last-name" placeholder="Last name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="tel" id="phone" placeholder="Phone">
+        <input type="text" id="street" placeholder="Street">
+        <div>
+          <select name="country" id="country">
+            <option value="norway">Norway</option>
+            <option value="sweden">Sweden</option>
+            <option value="denmark">Denmark</option>
+            <option value="united-kingdom">United Kingdom</option>
+          </select>
+          <input type="text" id="region" placeholder="Region">
+        </div>
+      </form>
+      <label for="hide">create account</label>
     </section>
   </main>
   <footer>
@@ -97,6 +78,6 @@
       <i class="fa-brands fa-twitter"></i>
       <i class="fa-brands fa-tiktok"></i>
     </div>
-  </footer> 
+  </footer>
 </body>
 </html>
