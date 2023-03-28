@@ -40,7 +40,7 @@
         <img src="/images/Image00006.jpg" alt="space war" class="checkout__image">
         <h2>SPACE WAR</h2>
         <div class="trash">
-          <input type="number" id="add-cart" min="1" max="10" placeholder="1">
+          <input type="number" min="1" max="10" placeholder="1">
           <i class="fas fa-trash"></i>
         </div>
         <p class="price">$29.00</p>
@@ -49,7 +49,7 @@
         <img src="/images/Image00002.jpg" alt="super duper" class="checkout__image">
         <h2>SUPER DUPER</h2>
         <div class="trash">
-          <input type="number" id="add-cart" min="1" max="10" placeholder="1">
+          <input type="number" min="1" max="10" placeholder="1">
           <i class="fas fa-trash"></i>
         </div>
         <p class="price">$19.00</p>
@@ -63,62 +63,67 @@
       </div>
     </section>
     <section class="boxed delivery">
-      <div class="delivery-information">
+      <form action="checkout_success.html" class="delivery-information">
         <h2>Delivery information</h2>
         <input type="text" id="first-name" placeholder="First name">
         <input type="text" id="last-name" placeholder="Last name">
         <input type="email" id="email" placeholder="Email">
         <input type="tel" id="phone" placeholder="Phone">
         <input type="text" id="street" placeholder="Street">
-        <select name="country" id="country">
-          <option value="norway">Norway</option>
-          <option value="sweden">Sweden</option>
-          <option value="denmark">Denmark</option>
-          <option value="united-kingdom">United Kingdom</option>
-        </select>
-        <input type="text" id="region" placeholder="Region">
-      </div>
-      <div class="billing-information">
+        <div>
+          <select name="country" id="country">
+            <option value="norway">Norway</option>
+            <option value="sweden">Sweden</option>
+            <option value="denmark">Denmark</option>
+            <option value="united-kingdom">United Kingdom</option>
+          </select>
+          <input type="text" id="region" placeholder="Region">
+        </div>
         <h2>Billing information</h2>
         <label for="card-info">Card information</label>
         <input type="number" id="card-info" placeholder="xxxx-xxxx-xxxx-xxxx">
         <label for="experation">Experation date</label>
-        <input type="month" id="experation">
-        <input type="text" id="cvc" placeholder="CVC">
-      </div>
-      <div class="button">
-        <a href="checkout_success.html">PAY NOW</a>
-      </div>
-      <div>
-        <h2>Already a member</h2>
-        <a href="sign_in.html">SIGN IN</a>
-      </div>
+        <div>
+          <input type="month" id="experation">
+          <input type="text" id="cvc" placeholder="CVC">
+        </div>
+        <p>
+          <input type="checkbox" id="terms">
+          I accept the 
+          <a href="contact.html">terms and conditions</a>      
+        </p>
+        <button class="button">
+          PAY NOW
+        </button>
+        <div style="align-items: baseline;">
+          <h2>Already a member</h2>
+          <a href="sign_in.html">SIGN IN</a>
+        </div>
+      </form>
     </section>
     <section class="boxed recommended">
       <h2>Other games you might like</h2>
     </section>
   </main>
   <footer>
-    copyright &copy;
-    <p>Gamehub.com all rights reserved</p>
-    <ul>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
       <li>For buyers</li>
       <li>How to buy</li>
       <li>Terms & conditions</li>
       <li>Sitemap</li>
     </ul>
-    <ul>
+    <ul class="sellers">
       <li>For sellers</li>
       <li>How to sell</li>
       <li>Buisness info</li>
     </ul>
-    <p>follow us on socials</p>
-    <ul>
-      <li>Facebook</li>
-      <li>Twitter</li>
-      <li>Tiktok</li>
-    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
   </footer>
-  
 </body>
 </html>

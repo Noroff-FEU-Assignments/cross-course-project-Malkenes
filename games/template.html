@@ -45,9 +45,7 @@
       <h2>Quick description</h2>
       <p>Detailed description</p>
       <p class="price">$00.00</p>
-      <div class="button">
-        <a href="../checkout.html">Add to cart</a>
-      </div>
+      <a href="../checkout.html" class="button">Add to cart</a>
       <div> <!--tags-->
         <ul>
           <li>Action</li>
@@ -72,41 +70,39 @@
     </section>
     <section class="boxed review">
       <h2>Write a review</h2>
-      <input type="text" name="name" id="name" placeholder="Name of reviewer">
-      <input type="text" name="title" id="title" placeholder="Title of review">
-      <div>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-
-      </div>
-      <textarea name="review" id="review" cols="30" rows="10" placeholder="write here"></textarea>
+      <form action="">
+        <input type="text" name="name" id="name" placeholder="Name of reviewer">
+        <input type="text" name="title" id="title" placeholder="Title of review">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <textarea name="review" id="review" cols="30" rows="10" placeholder="write here"></textarea>
+      </form>
     </section>
-
   </main>
   <footer>
-    copyright &copy;
-    <p>Gamehub.com all rights reserved</p>
-    <ul>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
       <li>For buyers</li>
       <li>How to buy</li>
       <li>Terms & conditions</li>
       <li>Sitemap</li>
     </ul>
-    <ul>
+    <ul class="sellers">
       <li>For sellers</li>
       <li>How to sell</li>
       <li>Buisness info</li>
     </ul>
-    <p>follow us on socials</p>
-    <ul>
-      <li>Facebook</li>
-      <li>Twitter</li>
-      <li>Tiktok</li>
-    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
   </footer>
-  
 </body>
 </html>

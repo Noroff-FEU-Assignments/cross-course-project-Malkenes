@@ -34,11 +34,11 @@
     <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
   </header>
   <main class="browse">
-    <section class="filter">
+    <div class="filter">
       <input type="checkbox" name="console" id="console-checkbox">
       <label for="console-checkbox" class="console-icon">choose console</label>
       <input type="checkbox" name="category" id="category-checkbox">
-      <label for="category-checkbox" class="category-icon">choose category</output></label>
+      <label for="category-checkbox" class="category-icon">choose category</label>
       <fieldset class="boxed choose-console">
         <legend>Console</legend>
         <input type="radio" id="playbox" name="console" value="playbox">
@@ -73,7 +73,7 @@
         <input type="checkbox" id="open_world" name="category" value="open_world">
         <label for="open_world">OPEN WORLD</label>
       </fieldset>
-    </section>
+    </div>
     <section class="game-list">
       <a href="games/template.html" class="game-container">
         <h3>PING PONG CHAMPIONSHIP</h3>
@@ -330,26 +330,24 @@
     </section>
   </main>
   <footer>
-    copyright &copy;
-    <p>Gamehub.com all rights reserved</p>
-    <ul>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
       <li>For buyers</li>
       <li>How to buy</li>
       <li>Terms & conditions</li>
       <li>Sitemap</li>
     </ul>
-    <ul>
+    <ul class="sellers">
       <li>For sellers</li>
       <li>How to sell</li>
       <li>Buisness info</li>
     </ul>
-    <p>follow us on socials</p>
-    <ul>
-      <li>Facebook</li>
-      <li>Twitter</li>
-      <li>Tiktok</li>
-    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
   </footer>
-  
 </body>
 </html>

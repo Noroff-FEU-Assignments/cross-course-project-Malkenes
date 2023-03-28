@@ -26,6 +26,7 @@ nav,
     padding: 5px;
     margin: 0 10px;
     border-radius: 10px;
+    flex: 1;
 }
 
 header {
@@ -83,8 +84,12 @@ footer {
 footer i {
     font-size: 32px;
 }
-.buyers , .sellers {
+.buyers,
+.sellers {
     display: none;
+}
+footer li {
+    display: block;
 }
 
 /* general */
@@ -121,7 +126,7 @@ h2 {
     font-size: 20px;
     text-decoration: line-through;
 }
-.button a {
+.button {
     font-weight: 900;
     font-size: 20px;
     text-decoration: none;
@@ -140,6 +145,22 @@ main {
     justify-content: space-between;
     padding: 5px;
 }
+/* forms */
+form {
+    display: flex;
+    flex-direction: column;
+}
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+form input,
+form select,
+form textarea {
+    margin: 10px 0;
+    padding: 5px;
+}
+
 /* home */
 .home {
     display: grid;
@@ -329,6 +350,9 @@ main {
 }
 .delivery {
     grid-area: delivery;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .recommended {
     grid-area: recommended;
@@ -379,23 +403,12 @@ main {
     grid-area: discount;
     align-self: center;
 }
-
-.delivery-information input,
-.delivery-information select,
-.billing-information input{
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0;
-    padding: 5px 0;
-    border: 1px;
-    width: 100%;
-    border-radius: 10px;
+#cvc {
+    width: 10%;
 }
-section.boxed.delivery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+form .button {
+    justify-content: center;
+    margin: 10px;
 }
 
 /* product details */
@@ -430,12 +443,12 @@ section.boxed.delivery {
     grid-area: review;
     display: inherit;
 }
-.review input,
-.review textarea,
-.review div {
-    margin: 10px;
+.stars {
+    justify-content: flex-start;
 }
-
+textarea {
+    resize: none;
+}
 /* browse games */
 
 .browse {
@@ -524,7 +537,30 @@ fieldset {
     justify-content: space-between;
 }
 
-@media (min-width: 700px) {
+/* sign in */
+
+.sign-in {
+    display: flex;
+    flex-direction: column;
+}
+#hide {
+    display: none;
+}
+.delivery-information {
+    max-width: 400px;
+}
+.create-account {
+    display: none;
+}
+#hide:checked ~ .sign-in .existing-account {
+    display: none;
+} 
+#hide:checked ~ .sign-in .create-account {
+    display: flex;
+}
+
+
+@media (min-width: 800px) {
     main {
         max-width: 1200px;
     }
@@ -615,5 +651,9 @@ fieldset {
     .console-icon,
     .category-icon {
         display: none;
+    }
+    /* sign in */
+    .sign-in {
+        align-items: center;
     }
 }
