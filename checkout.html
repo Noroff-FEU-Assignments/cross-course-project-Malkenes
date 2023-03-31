@@ -12,16 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
-
 </head>
 <body>
   <header>
     <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
     <input type="checkbox" id="menu-checkbox">
-    <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars"></i></label>
-    <label for="search-bar" class="search-icon"><i class="fas fa-search"></i></label>
+    <label for="menu-checkbox" class="hamburger-icon" aria-label="menu"><i class="fas fa-bars"></i></label>
+    <label for="search-bar" class="search-icon" aria-label="search"><i class="fas fa-search"></i></label>
     <input type="checkbox" id="search-bar">
-    <input type="text" placeholder="Search" class="search">
+    <input type="text" placeholder="Search" class="search" aria-label="search" >
     <nav>
       <ul>
         <li><a href="browse_games.html">BROWSE</a></li>
@@ -30,17 +29,20 @@
         <li><a href="about.html">ABOUT</a></li>
       </ul>
     </nav>
-    <a href="checkout.html"><i class="fas fa-bag-shopping"></i></a>
-    <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
+    <a href="checkout.html" aria-label="checkout"><i class="fas fa-bag-shopping"></i></a>
+    <a href="sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
   </header>
+  <section class="page-header">
+    <h1>Checkout</h1>
+  </section>
   <main class="checkout-page">
     <section class="boxed checkout">
-      <h2>CHECKOUT</h2>
+      <h2>Checkout details</h2>
       <div class="checkout-product">
         <img src="/images/Image00006.jpg" alt="space war" class="checkout__image">
         <h2>SPACE WAR</h2>
         <div class="trash">
-          <input type="number" min="1" max="10" placeholder="1">
+          <input type="number" min="1" max="10" placeholder="1" aria-label="enter amount of copies you want">
           <i class="fas fa-trash"></i>
         </div>
         <p class="price">$29.00</p>
@@ -49,7 +51,7 @@
         <img src="/images/Image00002.jpg" alt="super duper" class="checkout__image">
         <h2>SUPER DUPER</h2>
         <div class="trash">
-          <input type="number" min="1" max="10" placeholder="1">
+          <input type="number" min="1" max="10" placeholder="1" aria-label="enter amount of copies you want">
           <i class="fas fa-trash"></i>
         </div>
         <p class="price">$19.00</p>
@@ -65,11 +67,11 @@
     <section class="boxed delivery">
       <form action="checkout_success.html" class="delivery-information">
         <h2>Delivery information</h2>
-        <input type="text" id="first-name" placeholder="First name">
-        <input type="text" id="last-name" placeholder="Last name">
-        <input type="email" id="email" placeholder="Email">
-        <input type="tel" id="phone" placeholder="Phone">
-        <input type="text" id="street" placeholder="Street">
+        <input type="text" id="first-name" placeholder="First name" aria-label="first name">
+        <input type="text" id="last-name" placeholder="Last name" aria-label="Last name">
+        <input type="email" id="email" placeholder="Email" aria-label="email">
+        <input type="tel" id="phone" placeholder="Phone" aria-label="phone number">
+        <input type="text" id="adress" placeholder="Adress" aria-label="adress">
         <div>
           <select name="country" id="country">
             <option value="norway">Norway</option>
@@ -77,7 +79,7 @@
             <option value="denmark">Denmark</option>
             <option value="united-kingdom">United Kingdom</option>
           </select>
-          <input type="text" id="region" placeholder="Region">
+          <input type="text" id="region" placeholder="Region" aria-label="region">
         </div>
         <h2>Billing information</h2>
         <label for="card-info">Card information</label>
@@ -85,13 +87,12 @@
         <label for="experation">Experation date</label>
         <div>
           <input type="month" id="experation">
-          <input type="text" id="cvc" placeholder="CVC">
+          <input type="text" id="cvc" placeholder="CVC" aria-label="cvc">
         </div>
-        <p>
-          <input type="checkbox" id="terms">
-          I accept the 
-          <a href="contact.html">terms and conditions</a>      
-        </p>
+        <input type="checkbox" id="terms" style="align-self: baseline;">
+        <label for="terms">
+          I accept the <a href="contact.html">terms and conditions</a>      
+        </label>
         <button class="button">
           PAY NOW
         </button>

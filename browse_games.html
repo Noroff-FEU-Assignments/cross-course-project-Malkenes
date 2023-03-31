@@ -18,10 +18,10 @@
   <header>
     <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
     <input type="checkbox" id="menu-checkbox">
-    <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars"></i></label>
-    <label for="search-bar" class="search-icon"><i class="fas fa-search"></i></label>
+    <label for="menu-checkbox" class="hamburger-icon" aria-label="menu"><i class="fas fa-bars"></i></label>
+    <label for="search-bar" class="search-icon" aria-label="search"><i class="fas fa-search"></i></label>
     <input type="checkbox" id="search-bar">
-    <input type="text" placeholder="Search" class="search">
+    <input type="text" placeholder="Search" class="search" aria-label="search" >
     <nav>
       <ul>
         <li><a href="browse_games.html">BROWSE</a></li>
@@ -30,9 +30,12 @@
         <li><a href="about.html">ABOUT</a></li>
       </ul>
     </nav>
-    <a href="checkout.html"><i class="fas fa-bag-shopping"></i></a>
-    <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
+    <a href="checkout.html" aria-label="checkout"><i class="fas fa-bag-shopping"></i></a>
+    <a href="sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
   </header>
+  <section class="page-header">
+    <h1>Browse</h1>
+  </section>
   <main class="browse">
     <div class="filter">
       <input type="checkbox" name="console" id="console-checkbox">
@@ -44,11 +47,11 @@
         <input type="radio" id="playbox" name="console" value="playbox">
         <label for="playbox">PLAYBOX</label>
         <input type="radio" id="windows" name="console" value="windows">
-        <label for="playbox">WINDOWS</label>
+        <label for="windows">WINDOWS</label>
         <input type="radio" id="mac" name="console" value="mac">
-        <label for="playbox">MAC</label>
+        <label for="mac">MAC</label>
         <input type="radio" id="psp" name="console" value="psp">
-        <label for="playbox">PSP</label>
+        <label for="psp">PSP</label>
       </fieldset>
       <fieldset class="boxed choose-category">
         <legend>Category</legend>

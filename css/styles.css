@@ -145,6 +145,13 @@ main {
     justify-content: space-between;
     padding: 5px;
 }
+.page-header {
+    text-align: center;
+    color: #1A1F3C;
+    width: 400px;
+    background: radial-gradient(#FFF, #1A1F3C);
+    margin: 16px;
+}
 /* forms */
 form {
     display: flex;
@@ -171,13 +178,6 @@ form textarea {
     "sales"
     "category" 
     ;
-}
-.page-heading {
-    grid-area: heading;
-    text-align: center;
-    color: #1A1F3C;
-    background: radial-gradient(#FFF, #1A1F3C);
-    margin: 16px;
 }
 
 .new-releases {
@@ -320,10 +320,7 @@ form textarea {
     flex: 1;
     margin: 20px 0;
     padding: 0px 20px;
-}
-
-.about h1 {
-    text-align: center;
+    min-height: 400px;
 }
 
 .img__gamers {
@@ -609,7 +606,6 @@ fieldset {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
         grid-template-areas:
-        ". heading ." 
         "releases releases sales"
         "category category category"
         ;
@@ -622,7 +618,7 @@ fieldset {
     }
 
     .about section {
-        margin: 20px 50px;
+        margin: 20px;
     }
 
     /* checkout */
@@ -663,6 +659,15 @@ fieldset {
     }
     /* sign in */
     .sign-in {
-        align-items: center;
+        width: max-content;
+    }
+    /* contact */
+    .contact {
+        width: max-content;
+    }
+    .contact-wrapper {
+        background-repeat: no-repeat;
+        background-position: right;
+        background-image: url(../images/Nintendo-Switch-Console-Transparent-PNG.png);
     }
 }
