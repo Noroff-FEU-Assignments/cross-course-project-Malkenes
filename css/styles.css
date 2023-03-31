@@ -167,7 +167,6 @@ form textarea {
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-    "heading"
     "releases"
     "sales"
     "category" 
@@ -180,6 +179,7 @@ form textarea {
     background: radial-gradient(#FFF, #1A1F3C);
     margin: 16px;
 }
+
 .new-releases {
     grid-area: releases;
     margin: 10px;

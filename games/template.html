@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quick description of game">
+  <title>Game Hub | Product name</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link href="../css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <a href="../index.html"><img src="../images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars"></i></label>
+    <label for="search-bar" class="search-icon"><i class="fas fa-search"></i></label>
+    <input type="checkbox" id="search-bar">
+    <input type="text" placeholder="Search" class="search">
+    <nav>
+      <ul>
+        <li><a href="../browse_games.html">BROWSE</a></li>
+        <li><a href="../sell_games.html">SELL</a></li>
+        <li><a href="../contact.html">CONTACT</a></li>
+        <li><a href="../about.html">ABOUT</a></li>
+      </ul>
+    </nav>
+    <a href="../checkout.html"><i class="fas fa-bag-shopping"></i></a>
+    <a href="../sign_in.html"><i class="fas fa-circle-user"></i></a>
+  </header>
+  <main class="product_details">
+    <div class="product_images"> <!--no header so div instead of section-->
+      <img src="#" alt="Game cover">
+      <img src="#" alt="Gameplay">
+      <img src="#" alt="Gameplay">
+      <img src="#" alt="Gameplay">
+      <img src="#" alt="Gameplay"> <!--List?-->
+    </div>
+    <section class="boxed description">
+      <h1>Game title</h1>
+      <h2>Quick description</h2>
+      <p>Detailed description</p>
+      <p class="price">$00.00</p>
+      <a href="../checkout.html" class="button">Add to cart</a>
+      <div> <!--tags-->
+        <ul>
+          <li>Action</li>
+          <li>Adventure</li>
+          <li>Open World</li>
+        </ul>
+      </div>
+    </section>
+    <section class="boxed additional_information">
+      <div>
+        <h2>Parental advisory</h2>
+        <img src="#" alt="x age for y reason">
+      </div>
+      <div>
+        <h2>System requirments</h2>
+      </div>
+      <div>
+        <h2>Additional information</h2>
+        <p>Release date:</p>
+        <p>developer:</p>
+      </div>
+    </section>
+    <section class="boxed review">
+      <h2>Write a review</h2>
+      <form action="">
+        <input type="text" name="name" id="name" placeholder="Name of reviewer">
+        <input type="text" name="title" id="title" placeholder="Title of review">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <textarea name="review" id="review" cols="30" rows="10" placeholder="write here"></textarea>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
+      <li>For buyers</li>
+      <li>How to buy</li>
+      <li>Terms & conditions</li>
+      <li>Sitemap</li>
+    </ul>
+    <ul class="sellers">
+      <li>For sellers</li>
+      <li>How to sell</li>
+      <li>Buisness info</li>
+    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
+  </footer>
+</body>
+</html>

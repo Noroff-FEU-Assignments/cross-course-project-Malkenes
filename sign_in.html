@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in for a personalized selection">
+  <title>Game Hub | Sign in</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+    <input type="checkbox" id="menu-checkbox">
+    <label for="menu-checkbox" class="hamburger-icon"><i class="fas fa-bars"></i></label>
+    <label for="search-bar" class="search-icon"><i class="fas fa-search"></i></label>
+    <input type="checkbox" id="search-bar">
+    <input type="text" placeholder="Search" class="search">
+    <nav>
+      <ul>
+        <li><a href="browse_games.html">BROWSE</a></li>
+        <li><a href="sell_games.html">SELL</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </nav>
+    <a href="checkout.html"><i class="fas fa-bag-shopping"></i></a>
+    <a href="sign_in.html"><i class="fas fa-circle-user"></i></a>
+  </header>
+  <main>
+    <input type="checkbox" id="hide">
+    <section class=" sign-in">
+      <form action="index.html" class="boxed existing-account">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button class="button">SIGN IN</button>
+      </form>
+      <form action="" class="boxed create-account">
+        <input type="text" id="first-name" placeholder="First name">
+        <input type="text" id="last-name" placeholder="Last name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="tel" id="phone" placeholder="Phone">
+        <input type="text" id="street" placeholder="Street">
+        <div>
+          <select name="country" id="country">
+            <option value="norway">Norway</option>
+            <option value="sweden">Sweden</option>
+            <option value="denmark">Denmark</option>
+            <option value="united-kingdom">United Kingdom</option>
+          </select>
+          <input type="text" id="region" placeholder="Region">
+        </div>
+      </form>
+      <label for="hide">create account</label>
+    </section>
+  </main>
+  <footer>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
+      <li>For buyers</li>
+      <li>How to buy</li>
+      <li>Terms & conditions</li>
+      <li>Sitemap</li>
+    </ul>
+    <ul class="sellers">
+      <li>For sellers</li>
+      <li>How to sell</li>
+      <li>Buisness info</li>
+    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
+  </footer>
+</body>
+</html>
