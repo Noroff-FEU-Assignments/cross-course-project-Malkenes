@@ -32,10 +32,10 @@
     <a href="checkout.html" aria-label="checkout"><i class="fas fa-bag-shopping"></i></a>
     <a href="sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
   </header>
-  <section class="page-header">
-    <h1>Sign in</h1>
-  </section>
-  <main>
+  <main class="sign-on">
+    <section class="page-header">
+      <h1>Sign in</h1>
+    </section>
     <input type="checkbox" id="hide">
     <section class=" sign-in boxed">
       <form action="index.html" class="existing-account">
@@ -59,6 +59,8 @@
           </select>
           <input type="text" id="region" placeholder="Region" aria-label="region">
         </div>
+        <input type="password" id="create-password" placeholder="Password" aria-label="password">
+        <input type="password" id="repeat-password" placeholder="Repeat Password" aria-label="repeat password">
         <button class="button">CREATE ACCOUNT</button>
         <label for="hide">sign in</label>
       </form>
