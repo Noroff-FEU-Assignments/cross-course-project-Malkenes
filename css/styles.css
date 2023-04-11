@@ -80,6 +80,7 @@ footer {
     background-color: #000;
     display: flex;
     flex-direction: column-reverse;
+    padding: 16px;
 }
 footer i {
     font-size: 32px;
@@ -105,11 +106,12 @@ body {
     background-color: #1F1F1F;
     font-family: "nunito sans",sans-serif;
     font-size: 14px;
+    margin: 0;
 }
 
 h1 {
     font-weight: 900;
-    font-size: 36px;
+    font-size: 32px;
 }
 h2 {
     font-weight: 600;
@@ -133,8 +135,14 @@ h2 {
     color: #FFF;
     background-color: #1A1F3C;
     padding: 10px;
+    margin: 10px 0;
     border: solid;
-    border-radius: 10px;   
+    border-radius: 10px; 
+    width: max-content;  
+}
+.button:hover {
+    color: #1A1F3C;
+    background-color: #FFF;
 }
 main {
     margin: 16px auto;
@@ -147,10 +155,12 @@ main {
 }
 .page-header {
     text-align: center;
-    color: #1A1F3C;
-    width: 400px;
-    background: radial-gradient(#FFF, #1A1F3C);
-    margin: 16px;
+    color: #FFF;
+    max-width: 400px;
+    margin: auto;
+}
+.recommended-games {
+    display: flex;
 }
 /* forms */
 form {
@@ -410,10 +420,6 @@ form textarea {
 #cvc {
     width: 10%;
 }
-form .button {
-    justify-content: center;
-    margin: 10px;
-}
 
 /* product details */
 
@@ -424,9 +430,14 @@ form .button {
     "information"
     "review";
 }
+.tags {
+    display: flex;
+    justify-content: space-around;
+    margin: 16px 0;
+}
 .product_images {
     grid-area: product_images;
-    margin: 20px;
+    margin: 0 20px;
 }
 .product_images img {
     object-fit: contain;
@@ -483,10 +494,8 @@ textarea {
     border-radius: 16px;
 }
 fieldset {
-    width:80%;
-    right: 0;
     display: grid;
-    grid-template-columns: 2em 5em;
+    grid-template-columns: 2em auto;
     grid-template-rows: auto;
 }
 
@@ -563,6 +572,27 @@ fieldset {
     display: flex;
 }
 
+/* contact */
+.costumer-support {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.support-icon {
+    font-size: 36px;
+}
+#support-checkbox {
+    display: none;
+}
+#support {
+    display: none;
+    position: absolute;
+    bottom: 100px;
+}
+#support-checkbox:checked ~ #support{
+    display: block;
+}
+
 
 @media (min-width: 800px) {
     main {
@@ -627,7 +657,7 @@ fieldset {
         grid-template-rows: auto;
         grid-template-areas: 
         "delivery checkout"
-        ". recommended";
+        "delivery recommended";
     }
 
     /* product details */
@@ -639,7 +669,7 @@ fieldset {
         "product_images description review";
     }
     .product_details section {
-        margin: 20px 0;
+        margin: 0;
         border-radius: 0;
     }
 
@@ -651,7 +681,6 @@ fieldset {
     .browse fieldset {
         display: grid;
         position: relative;
-        width: max-content;
     }
     .console-icon,
     .category-icon {
@@ -659,7 +688,40 @@ fieldset {
     }
     /* sign in */
     .sign-in {
-        width: max-content;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .sign-in form {
+        max-width: 400px;
+    }
+    .create-account {
+        display: flex;
+    }
+    .picture-slider {
+        background: url(../images/[s_1283921101]-[gs_7]-[is_30]-cyberpunk\,\ spring\,\ plains\,\ sun.jpeg);
+        width: 50%;
+        height: 428px;
+        background-size: cover;
+        position: relative;
+        bottom: 448px;
+        left: 50%;
+    }
+    #hide:checked ~ .sign-in .existing-account {
+        display: flex;
+    }
+    #hide:checked ~ .picture-slider {
+        animation-name: slide;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes slide {
+        0% {
+            left: 50%;
+        }
+        100% {
+            left: 0;
+        }
     }
     /* contact */
     .contact {
@@ -668,6 +730,7 @@ fieldset {
     .contact-wrapper {
         background-repeat: no-repeat;
         background-position: right;
+        background-size: contain;
         background-image: url(../images/Nintendo-Switch-Console-Transparent-PNG.png);
     }
 }

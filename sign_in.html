@@ -37,13 +37,14 @@
   </section>
   <main>
     <input type="checkbox" id="hide">
-    <section class=" sign-in">
-      <form action="index.html" class="boxed existing-account">
+    <section class=" sign-in boxed">
+      <form action="index.html" class="existing-account">
         <input type="email" id="email" placeholder="Email" aria-label="email">
         <input type="password" id="password" placeholder="Password" aria-label="password">
         <button class="button">SIGN IN</button>
+        <label for="hide">create account</label>
       </form>
-      <form action="" class="boxed create-account">
+      <form action="index.html" class="create-account">
         <input type="text" id="first-name" placeholder="First name" aria-label="first name">
         <input type="text" id="last-name" placeholder="Last name" aria-label="Last name">
         <input type="email" id="email" placeholder="Email" aria-label="email">
@@ -58,9 +59,11 @@
           </select>
           <input type="text" id="region" placeholder="Region" aria-label="region">
         </div>
+        <button class="button">CREATE ACCOUNT</button>
+        <label for="hide">sign in</label>
       </form>
-      <label for="hide">create account</label>
     </section>
+    <div class="picture-slider"></div>
   </main>
   <footer>
     <p> copyright &copy; all rights reserved</p>
