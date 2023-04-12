@@ -434,16 +434,15 @@ fieldset {
 .game-container {
     display: flex;
     flex-direction: column;
-    max-width: 200px;
+    width: 100%;
     height: auto;
     text-decoration: none;
     color: #FFF;
 }
 .game-container h3 {
-    position: absolute;
+    position: relative;
     background:#1A1F3C;
     text-align: center;
-    width: 200px;
     margin: 0;
     padding: 16px 0;
     display: none;
@@ -700,7 +699,7 @@ fieldset {
     }
     .picture-slider {
         grid-column: 1 / 4;
-        background: url(../images/[s_1283921101]-[gs_7]-[is_30]-cyberpunk\,\ spring\,\ plains\,\ sun.jpeg);
+        background: url(../images/cyberpunk\,\ spring\,\ plains\,\ sun.jpeg);
         width: 50%;
         height: 500px;
         background-size: cover;
