@@ -51,14 +51,13 @@ nav ul li {
     display: block;
     padding: 10px 20px;
 }
-nav ul li a {
-    text-decoration: none;
-    color: #FFF;
-    font-size: 20px;
-    padding: 0 10px 0 0;
-}
+
 nav a {
     display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #FFF;
+    margin: 10px;
 }
 nav {
     position: absolute;
@@ -156,9 +155,10 @@ main {
     padding: 5px;
 }
 .recommended-games {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    
 }
 .recommended-games a {
     color: #FFF;
@@ -185,7 +185,7 @@ form textarea {
 /* home */
 .carousel-wrapper {
     width: 100%;
-    height: 400px;
+    height: 300px;
     position: relative;
     display: block;
 }
@@ -203,20 +203,21 @@ form textarea {
     display: none;
 }
 .game-1 {
-    background: url(../images/new_releases_space_war.jpg);
+    background: url(../images/new_releases_space_war_medium.jpg);
     z-index: 2;
     opacity: 1;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
+    
     
 }
 .game-2 {
-    background: url(../images/new_releases_racing.jpg);
+    background: url(../images/new_releases_boxer_medium.jpg);
     background-size: cover;
     background-position: center;
 }
 .game-3 {
-    background: url(../images/new_releases_super_duper.jpg);
+    background: url(../images/new_releases_super_duper_medium.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -260,9 +261,8 @@ form textarea {
     background: #1A1F3C;
 }
 .category {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .category a {
@@ -426,24 +426,24 @@ fieldset {
 }
 
 .game-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-items: center;
 }
 .game-container {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    max-width: 200px;
     height: auto;
-    margin: 8px;
     text-decoration: none;
     color: #FFF;
 }
 .game-container h3 {
     position: absolute;
     background:#1A1F3C;
-    width: 200px;
     text-align: center;
+    width: 200px;
     margin: 0;
     padding: 16px 0;
     display: none;
@@ -469,10 +469,11 @@ fieldset {
 
 .game-container_console img {
     height: 14px;
-    width: fit-content;
+    max-width: 100%;
 }
 .game-container_discount {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -509,9 +510,34 @@ fieldset {
 #support {
     display: none;
     position: absolute;
-    bottom: 100px;
+    bottom: 10%;
+    border-radius: 10px;
 }
 #support-checkbox:checked ~ #support{
+    display: block;
+}
+.faq {
+    display: flex;
+    flex-direction: column;
+}
+.faq input {
+    display: none;
+}
+.faq label {
+    padding: 16px 0;
+    background: #000;
+    border: solid #1F1F1F;
+}
+.faq p {
+    display: none;
+}
+#question-1:checked ~ .answer-1 {
+    display: block;
+}
+#question-2:checked ~ .answer-2 {
+    display: block;
+}
+#question-3:checked ~ .answer-3 {
     display: block;
 }
 /* checkout success*/
@@ -524,11 +550,14 @@ fieldset {
     font-size: 200px;
     align-self: center;
 }
+/* sell games*/
+.sell-games {
+    display: flex;
+    flex-direction: column;
+}
 
 @media (min-width: 800px) {
     main {
-        max-width: 1200px;
-        margin: 16px auto;
         grid-template-columns: repeat(3, 1fr);
     }
     .page-header {
@@ -556,6 +585,10 @@ fieldset {
         flex-wrap: wrap;
         padding: 0px 0px;
     }
+    nav a {
+        margin: 0;
+        padding: 0 20px 0 0;
+    }
     /* footer */
     footer {
         flex-direction: row;
@@ -575,12 +608,22 @@ fieldset {
     }
     .browse-by-category {
         grid-column: 1 / 4;
+        grid-row: 3;
     }
-
-    /* about */
-    .about {
-        flex-direction: row;
-        min-height: 600px;
+    .category {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .carousel-wrapper {
+        height: 400px;
+    }
+    .game-1 {
+        background-image: url(../images/new_releases_space_war_big.jpg);
+    }
+    .game-2 {
+        background-image: url(../images/new_releases_boxer_big.jpg);
+    }
+    .game-3 {
+        background-image: url(../images/new_releases_super_duper_big.jpg);
     }
 
     /* checkout */
@@ -600,7 +643,7 @@ fieldset {
     /* product details */
     
     .product_images {
-        grid-columns: 1;
+        grid-column: 1;
         grid-row: 1 / 3;
     }
     .description {
@@ -618,6 +661,9 @@ fieldset {
     
 
     /* browse games */
+    .browse {
+        grid-template-columns: auto;
+    }
     .filter {
         grid-column: 1;
         place-self: auto;
@@ -625,6 +671,7 @@ fieldset {
     }
     .game-list {
         grid-column: 2 / 4;
+        grid-template-columns: repeat(4, 1fr);
     }
     .browse fieldset {
         display: grid;
@@ -703,4 +750,11 @@ fieldset {
         grid-column: 2 / 4;
         
     }
+}
+@media (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+        margin: 16px auto;
+    }
+    
 }
