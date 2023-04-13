@@ -7,28 +7,24 @@ nav,
 }
 
 #menu-checkbox:checked ~ nav {
-    display: block;
+    display: flex;
 }
 
 #search-bar:checked ~ .search {
     display: block;
     position: absolute;
     top: 110%;
-    width: 100%;
+    width: 50%;
 }
 
 .search {
     position: relative;
-    max-width: 200px;
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 16px;
     border-radius: 10px;
     flex: 1;
 }
-.search:focus {
-    transition: 1s;
-    max-width: 90%;
-}
+
 
 header {
     height: 90px;
@@ -44,20 +40,19 @@ header i {
     flex: 1;
     font-size: 24px;
     padding: 10px;
-    color: #FFF;
 }
 
-nav ul li {
+nav ul {
+    display: flex;
+}
+nav li {
     display: block;
-    padding: 10px 20px;
+    padding: 32px;
 }
 
 nav a {
-    display: block;
     font-size: 20px;
-    text-decoration: none;
-    color: #FFF;
-    margin: 10px;
+    margin: 16px 0;
 }
 nav {
     position: absolute;
@@ -94,7 +89,7 @@ footer li {
 .boxed {
     background-color: #00000071;
     background-blend-mode: overlay;
-    border-radius: 50px;
+    border-radius: 16px;
     padding: 20px;
 }
 body {
@@ -114,14 +109,16 @@ h2 {
     font-weight: 600;
     font-size: 20px;
 }
+a {
+    color: #FFF;
+    text-decoration: none;
+}
 .price {
     font-family: "roboto",sans-serif;
-    color: #FFF;
     font-size: 30px;
 }
 .old-price {
     font-family: "roboto",sans-serif;
-    color: #FFF;
     font-size: 20px;
     text-decoration: line-through;
 }
@@ -160,9 +157,7 @@ main {
     gap: 16px;
     
 }
-.recommended-games a {
-    color: #FFF;
-}
+
 .social-media i {
     font-size: 32px;
 }
@@ -267,11 +262,9 @@ form textarea {
 
 .category a {
     min-width: 150px;
-    text-decoration: none;
     font-size: 20px;
     margin: 5px;
     padding: 10px;
-    color: #FFF;
     background: #1A1F3C;
     text-align: center;
     border: solid;
@@ -396,14 +389,14 @@ textarea {
 }
 /* browse games */
 
-.filter {
-    place-self: center;
+.filter_mobile {
+    display: flex;
+    justify-content: center;
 }
 .browse fieldset,
 #console-checkbox,
 #category-checkbox {
     display: none;
-    position: absolute;
     background: #000;
 }
 
@@ -415,11 +408,12 @@ textarea {
 .category-icon {
     color: #000;
     background: #FFF;
-    padding: 5px;
     margin: 16px;
+    padding: 5px;
     border-radius: 16px;
 }
 fieldset {
+    position: relative;
     display: grid;
     grid-template-columns: 2em auto;
     grid-template-rows: auto;
@@ -432,24 +426,23 @@ fieldset {
     justify-items: center;
 }
 .game-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: auto;
-    text-decoration: none;
-    color: #FFF;
 }
+
 .game-container h3 {
-    position: relative;
+    position: absolute;
     background:#1A1F3C;
     text-align: center;
+    width: 100%;
     margin: 0;
     padding: 16px 0;
     display: none;
 }
-.game-container:hover h3 {
-    display: block;
-}
+
 .game-container .price,
 .game-container .old-price {
     margin: 10px 0;
@@ -579,7 +572,7 @@ fieldset {
     .hamburger-icon {
         display: none;
     }
-    nav ul li {
+    nav li {
         display: inline-flex;
         flex-wrap: wrap;
         padding: 0px 0px;
@@ -680,6 +673,9 @@ fieldset {
     .category-icon {
         display: none;
     }
+    .game-container:hover h3 {
+        display: block;
+    }
     /* sign in */
     .sign-on {
         grid-template-rows: auto 500px 500px;
@@ -699,7 +695,7 @@ fieldset {
     }
     .picture-slider {
         grid-column: 1 / 4;
-        background: url(../images/cyberpunk\,\ spring\,\ plains\,\ sun.jpeg);
+        background: url(../images/cyberpunk-spring-plains-sun.jpeg);
         width: 50%;
         height: 500px;
         background-size: cover;
