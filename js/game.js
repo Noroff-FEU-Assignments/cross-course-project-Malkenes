@@ -6,6 +6,10 @@ const additionInformation = document.querySelector(".additional_information")
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const gamesId = params.get("id");
+const gameTitle = params.get("title");
+const pageTitle = document.getElementById("page-title");
+pageTitle.textContent = "Game Hub | " + gameTitle;
+console.log(gameTitle);
 //console.log(gamesId);
 const url = "https://api.noroff.dev/api/v1/gamehub/" + gamesId;
 

@@ -10,7 +10,13 @@
 </head>
 <body>
     <main class="browse">
-        <div class="filter"></div>
+        <form class="filter-games">
+            <label for="on-sale"><input type="checkbox" id="on-sale">Sale</label>
+            <label for="sports"><input type="checkbox" id="sports" name="genre">Sports</label>
+            <label for="action"><input type="checkbox" id="action" name="genre">Action</label>
+            <label for="adventure"><input type="checkbox" id="adventure" name="genre">Adventure</label>
+            <label for="horror"><input type="checkbox" id="horror" name="genre">Horror</label>
+        </form>
         <section class="game-list">
         </section>
     </main>
