@@ -6,15 +6,19 @@ const container = document.querySelector(".game-list");
 async function createPageElements() {
     try {
         showLoadingIndicator(container);
-        const apiData = await makeApiCall();
+        let apiData = await makeApiCall();
         container.innerHTML = "";
+
+        if (container.classList.contains("short-list")) {
+            apiData = apiData.slice(0,4);
+        }
         
         if (localStorage.key("genre")) {
             initialisePage();
-            localStorage.removeItem("genre");
         } else {
             apiData.forEach(createGameCard);
         }
+
     } catch (error) {
         console.log(error);
         errorMessage(container);
@@ -27,6 +31,7 @@ function initialisePage() {
     for (let i=0 ; i < allCheckboxes.length ; i++) {
         if(genre === allCheckboxes[i].id) {
             allCheckboxes[i].checked = true;
+            localStorage.removeItem("genre");
             reloadPage();
         } else {
             continue;

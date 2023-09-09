@@ -8,6 +8,9 @@ export function createBackground() {
     consoleType.setAttribute("class", "game-container_console");
     
     const image = document.createElement("img");
+    image.setAttribute("src" , "../../images/playbox_logo.jpg");
+    image.setAttribute("alt" , "for playbox");
+    consoleType.append(image);
     const starRating = getRating();
 
     background.append(consoleType);
