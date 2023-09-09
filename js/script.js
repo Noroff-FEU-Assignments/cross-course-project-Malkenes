@@ -1,42 +1,83 @@
-import { makeApiCall, renderImage, createGameCard, filterGames, categoryList, createCarousel } from "./render/renderGames.js";
-import { getChecked, sportsFilter, reloadPage } from "./functions/filterGames.js";
-//categoryList();
-//makeApiCall();
-//createGameCard();
-//getChecked();
-//filterGames();
+import { makeApiCall, createGameCard, showLoadingIndicator, errorMessage } from "./render/renderGames.js";
 
-//const filterSubmit = document.querySelector(".filter-games");
-//filterSubmit.action = "../test.html"
-//console.log(filterSubmit);
-//sportsFilter();
+const allCheckboxes = document.getElementsByTagName("input");
+const container = document.querySelector(".game-list");
 
-const loadingIndicator = document.querySelector("#loading-indicator")
 async function createPageElements() {
     try {
-        const container = document.querySelector(".game-list");
+        showLoadingIndicator(container);
         const apiData = await makeApiCall();
-        if (container) {
-            //container.innerHTML = "";
-            apiData.forEach(createGameCard);
+        container.innerHTML = "";
+        
+        if (localStorage.key("genre")) {
+            initialisePage();
+            localStorage.removeItem("genre");
         } else {
-            console.log("bueno");
+            apiData.forEach(createGameCard);
         }
-        //loadingIndicator.innerHTML = ""
-        createCarousel(apiData);
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        errorMessage(container);
     }
 }
-const genre = localStorage.getItem("genre");
-const allCheckboxes = document.getElementsByTagName("input");
-for (let i=0 ; i < allCheckboxes.length ; i++) {
-    if(genre === allCheckboxes[i].id) {
-        console.log(allCheckboxes[i]);
+
+function initialisePage() {
+    const genre = localStorage.getItem("genre");
+
+    for (let i=0 ; i < allCheckboxes.length ; i++) {
+        if(genre === allCheckboxes[i].id) {
+            allCheckboxes[i].checked = true;
+            reloadPage();
+        } else {
+            continue;
     }
 }
+}
+
+//reloads the page when a checkbox is changed
 for(let i=0 ; i < allCheckboxes.length ; i++) {
     allCheckboxes[i].addEventListener("change", reloadPage)
 }
-//localStorage.clear();
+
+async function reloadPage() {
+    const genreCheckboxes = document.getElementsByName("category");
+    container.innerHTML ="";
+    var genreList = [];
+    for (let i = 0; i < genreCheckboxes.length; i++) {
+        if (genreCheckboxes[i].checked) {
+            genreList.push(genreCheckboxes[i].id);
+        }
+    }
+    try {
+        showLoadingIndicator(container);
+        const data = await makeApiCall();
+        container.innerHTML = "";
+
+        let checker = (arr , target) => target.every(v => arr.includes(v));
+
+        for (let i = 0; i < data.length; i++) {
+            if(checker([data[i].genre.toLowerCase()] , genreList) && saleStatus(data[i].onSale)) {
+                createGameCard(data[i]);
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        errorMessage(container);
+    }
+
+    if (container.innerHTML === "") {
+        container.innerHTML = "<p>no matches</p>"
+    }
+
+}
+
+//returns boolean value
+function saleStatus(onSale) {
+    const salesCheckbox = document.getElementById("on-sale");
+    if (!salesCheckbox.checked) {
+        return true;
+    } else {
+        return (onSale);
+    }
+}
 createPageElements();

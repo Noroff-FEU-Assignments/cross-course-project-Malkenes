@@ -1,3 +1,5 @@
+// functions that returns html elements
+
 export function createBackground() {
     const background = document.createElement("div");
     background.setAttribute("class", "game-container_background");
@@ -6,12 +8,6 @@ export function createBackground() {
     consoleType.setAttribute("class", "game-container_console");
     
     const image = document.createElement("img");
-    //image.src = <img src="../../../images/playbox_logo.jpg"></img>;
-
-    //const starRating = document.createElement("div");
-    //const star = document.createElement("i");
-    //star.setAttribute("class", "fas fa-star");
-    //starRating.append(star, star);
     const starRating = getRating();
 
     background.append(consoleType);
@@ -19,6 +15,15 @@ export function createBackground() {
     return background;
 }
 
+export function createImageElement(image) {
+    const imageContainer = document.createElement("div");
+    imageContainer.setAttribute("class" , "game-container_image");
+    const imageElement = document.createElement("img");
+    imageElement.src = image
+    //imageElement.setAttribute("class" , "clipped")
+    imageContainer.append(imageElement);
+    return imageContainer;
+}
 export function createPricetag(thing) {
     const priceTag = document.createElement("div");
     priceTag.setAttribute("class", "game-container_discount");

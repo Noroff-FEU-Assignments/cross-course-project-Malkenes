@@ -1,16 +1,18 @@
-import { makeApiCall, showLoadingIndicator } from "./render/renderGames.js";
+import { makeApiCall, showLoadingIndicator, sortByDate , errorMessage } from "./render/renderGames.js";
 import { createPricetag } from "./functions/createElement.js";
+
+const container = document.querySelector(".carousel-wrapper");
 
 async function renderCarousel() {
     try {
-        const container = document.querySelector(".carousel-wrapper");
         showLoadingIndicator(container);
         const apiData = await makeApiCall();
-        console.log(container);
+        sortByDate(apiData);
         container.innerHTML = "";
         createCarousel(apiData);
     } catch(error) {
         console.log(error);
+        errorMessage(container);
     }
 }
 
@@ -45,7 +47,7 @@ function createCarousel(data) {
 function createCarouselItem(el) {
     const carouselWrapper = document.querySelector(".carousel-wrapper");
     carouselWrapper.innerHTML = "";
-    carouselWrapper.setAttribute("href" , "../games/template.html?id=" + el.id)
+    carouselWrapper.setAttribute("href" , "../games/template.html?id=" + el.id + "&title=" + el.title)
     let gameTitle = document.createElement("h3");
     gameTitle.textContent = el.title;
     let gameDescription = document.createElement("p");
@@ -59,9 +61,15 @@ function createCarouselItem(el) {
 
 
 const salesPromotion = document.querySelector(".sales");
-console.log(salesPromotion);
 salesPromotion.addEventListener("click", function(){
-    localStorage.setItem("genre", "sales");
-    document.location.href = "../test.html";
+    localStorage.setItem("genre", "on-sale");
+    document.location.href = "../browse_games.html";
 })
+
+const browseByCategory = document.querySelectorAll(".category li");
+for(let i = 0 ; i < browseByCategory.length ; i++) {
+    browseByCategory[i].addEventListener("click", function(){
+    localStorage.setItem("genre", browseByCategory[i].id);
+    document.location.href = "../browse_games.html";
+})}
 renderCarousel();

@@ -98,6 +98,9 @@ body {
     font-size: 14px;
     margin: 0;
 }
+main {
+    min-height: 100vh;
+}
 
 h1 {
     font-weight: 900;
@@ -154,6 +157,36 @@ main {
 .social-media i {
     font-size: 32px;
     margin: 0 8px;
+}
+
+#loading-indicator {
+    height: 100%;
+    width: 200px;
+    background-image: url(../images/GameHub_Logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    animation-name: spin;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(359deg);
+    }
+}
+
+.error-message {
+
+    background: #c75252;
+    border: solid red;
+    text-align: center;
+    justify-self: center;
 }
 /* forms */
 form {
@@ -246,6 +279,11 @@ form textarea {
     display: flex;
     justify-content: center;
 }
+.carousel-navbar i {
+    padding: 16px;
+    font-size: 32px;
+    cursor: pointer;
+}
 .circle {
     display: block;
     width: 20px;
@@ -260,9 +298,11 @@ form textarea {
 .category {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding: 0;
 }
 
-.category a {
+.category li {
+    display: block;
     font-size: 20px;
     margin: 5px;
     padding: 10px;
@@ -270,6 +310,7 @@ form textarea {
     text-align: center;
     border: solid 1px;
     border-radius: 8px;
+    cursor: pointer;
 }
 .sales {
     display: flex;
@@ -282,6 +323,7 @@ form textarea {
     background-size: cover;
     background-position: right;
     border-radius: 16px;
+    cursor: pointer;
 }
 .sales p {
     position: relative;
@@ -380,6 +422,7 @@ form textarea {
     grid-row: 1;
     display: flex;
     flex-direction: column;
+    min-height: 100px;
 }
 .tags {
     flex: 1;
@@ -412,6 +455,9 @@ textarea {
 }
 /* browse games */
 
+.clipped {
+    clip-path: inset(10% 0 5% 0);
+}
 .filter_mobile {
     display: flex;
     justify-content: center;
@@ -489,7 +535,7 @@ fieldset {
 .game-container_discount {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 16px;
 }
 
 /* sign in */

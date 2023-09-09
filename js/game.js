@@ -1,3 +1,4 @@
+import { showLoadingIndicator , errorMessage} from "./render/renderGames.js";
 import { createPricetag } from "./functions/createElement.js";
 
 const gameDescription = document.querySelector(".description");
@@ -9,22 +10,21 @@ const gamesId = params.get("id");
 const gameTitle = params.get("title");
 const pageTitle = document.getElementById("page-title");
 pageTitle.textContent = "Game Hub | " + gameTitle;
-console.log(gameTitle);
-//console.log(gamesId);
 const url = "https://api.noroff.dev/api/v1/gamehub/" + gamesId;
 
 async function getGameData() {
     try {
+        showLoadingIndicator(gameDescription);
         const response = await fetch(url);
 
         const result = await response.json();
-        console.log(result);
+        gameDescription.innerHTML = "";
         createHtml(result);
     } catch(error) {
         console.log(error);
+        errorMessage(gameDescription);
     }
 }
-getGameData();
 
 
 function createHtml(data) {
@@ -60,3 +60,4 @@ function createHtml(data) {
       </div>
     `
 }
+getGameData();
