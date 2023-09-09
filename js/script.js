@@ -2,7 +2,7 @@ import { makeApiCall, createGameCard, showLoadingIndicator, errorMessage } from 
 
 const allCheckboxes = document.getElementsByTagName("input");
 const container = document.querySelector(".game-list");
-
+//problem loading directly on chrome
 async function createPageElements() {
     try {
         showLoadingIndicator(container);
@@ -13,10 +13,10 @@ async function createPageElements() {
             apiData = apiData.slice(0,4);
         }
         
-        if (localStorage.key("genre")) {
-            initialisePage();
-        } else {
+        if (!localStorage.key("genre")) {
             apiData.forEach(createGameCard);
+        } else {
+            initialisePage();
         }
 
     } catch (error) {
