@@ -72,4 +72,5 @@ for(let i = 0 ; i < browseByCategory.length ; i++) {
     localStorage.setItem("genre", browseByCategory[i].id);
     document.location.href = "../browse_games.html";
 })}
+
 renderCarousel();

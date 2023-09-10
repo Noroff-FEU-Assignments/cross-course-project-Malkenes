@@ -97,9 +97,8 @@ body {
     font-family: "nunito sans",sans-serif;
     font-size: 14px;
     margin: 0;
-}
-main {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -146,6 +145,8 @@ main {
     grid-template-columns: 100%;
     grid-template-rows: auto;
     gap: 16px;
+    flex: 1;
+    min-height: 100vh;
 }
 .recommended-games {
     display: grid;
@@ -214,6 +215,7 @@ form textarea {
     justify-content: center;
     flex-direction: column;
     background-color: #00000071;
+    background-blend-mode: overlay;
     border-radius: 16px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -221,7 +223,7 @@ form textarea {
     transition: all 0.3s ease-in;
 }
 .carousel-wrapper > * {
-    width: 40%;
+    width: 50%;
     margin: 16px;
 }
 .carousel-wrapper h3 {

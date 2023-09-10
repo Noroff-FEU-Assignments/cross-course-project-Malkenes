@@ -23,18 +23,17 @@ export function createImageElement(image) {
     imageContainer.setAttribute("class" , "game-container_image");
     const imageElement = document.createElement("img");
     imageElement.src = image
-    //imageElement.setAttribute("class" , "clipped")
     imageContainer.append(imageElement);
     return imageContainer;
 }
-export function createPricetag(thing) {
+export function createPricetag(el) {
     const priceTag = document.createElement("div");
     priceTag.setAttribute("class", "game-container_discount");
     const price = document.createElement("p");
     const discountedPrice = document.createElement("p");
-    price.innerText = "$" + thing.price;
-    discountedPrice.innerText = "$" + thing.discountedPrice;
-    if (thing.onSale) {
+    price.innerText = "$" + el.price;
+    discountedPrice.innerText = "$" + el.discountedPrice;
+    if (el.onSale) {
         priceTag.append(discountedPrice, price);
         price.className = "old-price";
         discountedPrice.className = "price";

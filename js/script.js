@@ -39,11 +39,18 @@ function initialisePage() {
 }
 }
 
-//reloads the page when a checkbox is changed
+/*
+reloads the page when any checkbox is changed
+*/
 for(let i=0 ; i < allCheckboxes.length ; i++) {
     allCheckboxes[i].addEventListener("change", reloadPage)
 }
 
+/* 
+loops over all genres and stores the values that are checked in an array
+then makes an API call and renders objects that have all the genre's
+in the array
+*/
 async function reloadPage() {
     const genreCheckboxes = document.getElementsByName("category");
     container.innerHTML ="";
@@ -76,7 +83,6 @@ async function reloadPage() {
 
 }
 
-//returns boolean value
 function saleStatus(onSale) {
     const salesCheckbox = document.getElementById("on-sale");
     if (!salesCheckbox.checked) {
@@ -85,4 +91,5 @@ function saleStatus(onSale) {
         return (onSale);
     }
 }
+
 createPageElements();

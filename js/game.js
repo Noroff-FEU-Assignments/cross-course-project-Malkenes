@@ -60,4 +60,5 @@ function createHtml(data) {
       </div>
     `
 }
+
 getGameData();
