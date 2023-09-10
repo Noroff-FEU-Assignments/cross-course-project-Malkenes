@@ -1,8 +1,8 @@
 import { makeApiCall, createGameCard, showLoadingIndicator, errorMessage } from "./render/renderGames.js";
 
-const allCheckboxes = document.getElementsByTagName("input");
+const allCheckboxes = document.querySelectorAll(".choose-category input");
 const container = document.querySelector(".game-list");
-//problem loading directly on chrome
+
 async function createPageElements() {
     try {
         showLoadingIndicator(container);
@@ -13,7 +13,7 @@ async function createPageElements() {
             apiData = apiData.slice(0,4);
         }
         
-        if (!localStorage.key("genre")) {
+        if (localStorage.getItem("genre") === null) {
             apiData.forEach(createGameCard);
         } else {
             initialisePage();

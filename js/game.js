@@ -35,7 +35,7 @@ function createHtml(data) {
     gameDescription.innerHTML = 
     `<h1>${data.title}</h1>
     <h2>${data.description}</h2>
-    <a href="../checkout.html" class="button">Add to cart</a>
+    <button class="button">Add to cart</button>
     <div class= "test"></div>
     <div class="tags">
         <p>${data.genre}</p>
@@ -59,6 +59,13 @@ function createHtml(data) {
         <p>developer:</p>
       </div>
     `
+
+    const callToAction = document.querySelector(".button");
+
+    callToAction.addEventListener("click", function() {
+      document.location.href = "../checkout.html";
+});
 }
+
 
 getGameData();

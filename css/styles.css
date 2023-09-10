@@ -50,7 +50,7 @@ nav li {
 }
 
 nav a {
-    font-size: 20px;
+    font-size: 16px;
     margin: 16px 0;
 }
 nav {
@@ -99,6 +99,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 h1 {
@@ -138,6 +139,8 @@ a {
 .button:hover {
     color: #1A1F3C;
     background-color: #FFF;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
 }
 main {
     margin: 16px;
@@ -146,7 +149,6 @@ main {
     grid-template-rows: auto;
     gap: 16px;
     flex: 1;
-    min-height: 100vh;
 }
 .recommended-games {
     display: grid;
@@ -183,13 +185,14 @@ main {
 }
 
 .error-message {
-
     background: #c75252;
     border: solid red;
     text-align: center;
-    justify-self: center;
+    height: fit-content;
 }
+
 /* forms */
+
 form {
     display: flex;
     flex-direction: column;
