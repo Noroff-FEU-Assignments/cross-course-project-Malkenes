@@ -50,31 +50,8 @@
     </section>
     <section class="boxed checkout">
       <h2>Checkout details</h2>
-      <div class="checkout-product">
-        <div class="checkout_image-1"></div>
-        <h2>SPACE WAR</h2>
-        <div class="trash">
-          <input type="number" min="1" max="10" placeholder="1" aria-label="enter amount of copies you want">
-          <i class="fas fa-trash"></i>
-        </div>
-        <p class="price">$29.00</p>
-      </div>
-      <div class="checkout-product">
-        <div class="checkout_image-2"></div>
-        <h2>SUPER DUPER</h2>
-        <div class="trash">
-          <input type="number" min="1" max="10" placeholder="1" aria-label="enter amount of copies you want">
-          <i class="fas fa-trash"></i>
-        </div>
-        <p class="price">$19.00</p>
-        <p class="discount">34%</p>
-        <p class="old-price">$29.00</p>
-      </div>
-      <div class="checkout-product">
-        <h2>TOTAL</h2>
-        <p class="price">$48.00</p>
-        <p class="old-price">$58.00</p>
-      </div>
+      <div class="checkout-products" id="checkout-shop"></div>
+      <div class="checkout-product" id="total"></div>
     </section>
     <section class="boxed delivery">
       <form action="checkout_success.html" class="delivery-information">
@@ -140,5 +117,6 @@
     </div>
   </footer>
   <script src="js/script.js" type="module"></script>
+  <script src="js/checkout.js" type="module"></script>
 </body>
 </html>

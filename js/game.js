@@ -1,5 +1,6 @@
 import { showLoadingIndicator , errorMessage} from "./render/renderGames.js";
 import { createPricetag } from "./functions/createElement.js";
+import { save , load } from "./functions/cart.js";
 
 const gameDescription = document.querySelector(".description");
 const additionInformation = document.querySelector(".additional_information")
@@ -35,7 +36,12 @@ function createHtml(data) {
     gameDescription.innerHTML = 
     `<h1>${data.title}</h1>
     <h2>${data.description}</h2>
-    <button class="button">Add to cart</button>
+    <button class="button" 
+      data-image=${data.image}
+      data-title=${data.title}
+      data-price=${data.price}>
+      Add to cart
+    </button>
     <div class= "test"></div>
     <div class="tags">
         <p>${data.genre}</p>
@@ -59,12 +65,22 @@ function createHtml(data) {
         <p>developer:</p>
       </div>
     `
-
     const callToAction = document.querySelector(".button");
 
     callToAction.addEventListener("click", function() {
+      let cart = load("cart") || [];
+      const gameInCart = cart.find(item => item.data.id === data.id);
+      if (gameInCart) {
+        gameInCart.quantity++
+      } else {
+      cart.push({
+        data,
+        quantity: 1
+      });
+      }
+      save("cart" , cart);
       document.location.href = "../checkout.html";
-});
+    });
 }
 
 

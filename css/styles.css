@@ -115,6 +115,11 @@ a {
     color: #FFF;
     text-decoration: none;
 }
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 .price {
     font-family: "roboto",sans-serif;
     font-size: 30px;
@@ -379,40 +384,32 @@ form textarea {
     grid-template-areas: 
     "game-cover title title"
     "game-cover items price"
-    "game-cover discount new-price";
+    "game-cover discount price";
 }
-.checkout_image-1 {
+.checkout_image {
     grid-area: game-cover;
-    background: url(../images/Image00006.jpg);
     background-size: contain;
     background-repeat: no-repeat;
 }
-
-.checkout_image-2 {
-    grid-area: game-cover;
-    background: url(../images/Image00002.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;
+#total {
+    border-top: solid;
 }
 
-.checkout-product h2 {
+.checkout-product h3 {
     grid-area: title;
     align-self: center;
 }
 .trash {
     grid-area: items;
-    align-self: center;
+    display: flex;
+    gap: 32px;
+    align-items: center;
 }
-.trash input {
-    width: 20%;
-}
-.checkout-product .price {
+.checkout-product .price-container {
     grid-area: price;
-    align-self: center;
 }
-.checkout-product .old-price {
-    grid-area: new-price;
-    align-self: center;
+.price-container p {
+    margin: 0;
 }
 .checkout-product .discount{
     grid-area: discount;

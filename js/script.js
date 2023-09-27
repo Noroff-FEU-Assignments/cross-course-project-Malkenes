@@ -1,5 +1,4 @@
 import { makeApiCall, createGameCard, showLoadingIndicator, errorMessage } from "./render/renderGames.js";
-
 const allCheckboxes = document.querySelectorAll(".choose-category input");
 const container = document.querySelector(".game-list");
 
