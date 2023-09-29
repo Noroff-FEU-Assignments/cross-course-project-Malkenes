@@ -54,41 +54,120 @@
       <div class="checkout-product" id="total"></div>
     </section>
     <section class="boxed delivery">
-      <form action="checkout_success.html" class="delivery-information">
+      <div class="collapse-toggle">
+        <h2>Already a member ?</h2>
+        <i id="sign-in-toggle">sign in</i>
+      </div>
+      <form class="delivery-information collapsed" id="sign-in-form">
+        <div>
+          <input type="text" id="sign-in-email" placeholder="Enter your email" aria-label="enter your email adress">
+          <p class="form-error" id="sign-in-email-error">Email address invalid</p>
+          <p class="form-error" id="email-unregistered">Email address not registered</p>
+        </div>
+        <div>
+          <input type="password" id="password" placeholder="Enter your password" aria-label="enter your password">
+          <p class="form-error" id="password-error">Incorrect password</p>
+        </div>
+        <button class="button">Sign in</button>
+      </form>
+      <div class="collapse-toggle">
         <h2>Delivery information</h2>
-        <input type="text" id="first-name" placeholder="First name" aria-label="first name">
-        <input type="text" id="last-name" placeholder="Last name" aria-label="Last name">
-        <input type="email" id="email" placeholder="Email" aria-label="email">
-        <input type="tel" id="phone" placeholder="Phone" aria-label="phone number">
-        <input type="text" id="adress" placeholder="Adress" aria-label="adress">
+        <i id="deliveryToggle">+</i>
+      </div>
+      <form action="checkout_success.html" class="delivery-information" id="delivery-form">
+        <div class="form-row">
+          <div>
+            <input type="text" id="first-name" placeholder="First name" aria-label="first name">
+            <p class="form-error" id="first-name-error">Please enter first name</p>
+          </div>
+          <div>
+            <input type="text" id="last-name" placeholder="Last name" aria-label="Last name">
+            <p class="form-error" id="last-name-error">Please enter last name</p>
+          </div>
+        </div>
         <div>
+          <input type="email" id="email" placeholder="Email" aria-label="email">
+          <p class="form-error" id="email-error">Please enter Valid email</p>
+        </div>
+        <div>
+          <input type="tel" id="phone" placeholder="Phone" aria-label="phone number">
+          <p class="form-error" id="phone-error">Please enter Valid phone number</p>
+        </div>
+        <div>
+          <input type="text" id="address" placeholder="Address" aria-label="address">
+          <p class="form-error" id="address-error">Please enter valid address</p>
+        </div>
+        <div class="form-row">
           <select name="country" id="country" aria-label="select country">
-            <option value="norway">Norway</option>
-            <option value="sweden">Sweden</option>
-            <option value="denmark">Denmark</option>
-            <option value="united-kingdom">United Kingdom</option>
+            <option value="NO">NORWAY</option>
+            <option value="SE">SWEDEN</option>
+            <option value="DK">DENMARK</option>
+            <option value="GB">GREAT BRITAIN</option>
+            <option value="SA">SOUTH AFRICA</option>
+            <option value="US">USA</option>
           </select>
-          <input type="text" id="region" placeholder="Region" aria-label="region">
+          <div>
+            <input type="text" id="city" placeholder="City" aria-label="city">
+            <p class="form-error" id="city-error">Please enter valid city</p>
+          </div>
         </div>
+        <div class="form-row">
+          <div>
+            <input type="text" id="state" placeholder="State / Province" aria-label="state or province">
+            <p class="form-error" id="state-error">Please enter valid state / province</p>
+          </div>
+          <div>
+            <input type="text" id="zip-code" placeholder="Zip code" aria-label="zip code">
+            <p class="form-error" id="zip-code-error">Please enter valid zip code</p>
+          </div>
+        </div>
+        <button class="button">Continue</button>
+      </form>
+      <div class="collapse-toggle">
         <h2>Billing information</h2>
-        <label for="card-info">Card information</label>
-        <input type="number" id="card-info" placeholder="xxxx-xxxx-xxxx-xxxx">
-        <label for="experation">Experation date</label>
+        <i id="billing-toggle">+</i>
+      </div>
+      <form action="" class="delivery-information collapsed" id="billing-form">
         <div>
-          <input type="month" id="experation">
-          <input type="text" id="cvc" placeholder="CVC" aria-label="cvc">
+          <div>
+            <input type="radio" name="card-type" id="visa" value="visa">
+            <label for="visa"><i class="fa-brands fa-cc-visa"></i>Visa Payment</label>
+          </div>
+          <div>
+            <input type="radio" name="card-type" id="mastercard" value="mastercard">
+            <label for="mastercard"><i class="fa-brands fa-cc-mastercard"></i>Master Card</label>
+          </div>
+          <p class="form-error" id="payment-method-error">Choose a payment method</p>
         </div>
-        <input type="checkbox" id="terms" style="align-self: baseline;">
-        <label for="terms">
-          I accept the <a href="contact.html" style="color: blue;">terms and conditions</a>      
-        </label>
+        <div>
+          <label for="card-holder">Card holder</label>
+          <input type="text" id="card-holder" placeholder="Full name">
+          <p class="form-error" id="card-holder-error">Please enter valid name</p>
+        </div>
+        <div>
+          <label for="card-info">Card information</label>
+          <input type="text" id="card-info">
+          <p class="form-error" id="card-info-error">Please enter valid card</p>
+        </div>   
+        <div class="form-row">
+          <div>
+            <label for="experation">Experation date</label>
+            <input type="text" id="experation" placeholder="MM/YY">
+            <p class="form-error" id="experation-error">Not a date</p>
+          </div>
+          <div>
+            <label for="cvc">CVC</label>
+            <input type="text" id="cvc">
+            <p class="form-error" id="cvc-error">Not the funny 3 numbers</p>
+          </div>
+        </div>
+        <div>
+          <label><input type="checkbox" id="terms"> accept the terms and conditions
+          </label>
+        </div>
         <button class="button">
           PAY NOW
         </button>
-        <div style="align-items: baseline;">
-          <h2>Already a member</h2>
-          <a href="sign_in.html">SIGN IN</a>
-        </div>
       </form>
     </section>
     <section class="boxed recommended">

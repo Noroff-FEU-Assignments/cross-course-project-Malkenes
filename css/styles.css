@@ -136,7 +136,6 @@ a {
     color: #FFF;
     background-color: #1A1F3C;
     padding: 10px;
-    margin: 10px 0;
     border: solid;
     border-radius: 8px; 
     width: max-content;  
@@ -197,21 +196,57 @@ main {
 }
 
 /* forms */
-
+.delivery-information {
+    max-height: 1000px;
+    margin: 16px 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+.collapsed {
+    max-height: 0;
+    margin: 0;
+}
 form {
     display: flex;
     flex-direction: column;
 }
-form div {
+form > * {
+    margin: 8px;
+}
+form .button {
+    width: unset;
+    padding: 4px;
+    font-size: unset;
+    border-radius: unset;
+}
+.form-row {
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
 }
 form input,
 form select,
 form textarea {
+    width: 100%;
+    /*
     margin: 8px 0;
-    padding: 5px;
+    */
+    padding: 4px;
+    /*
     border-radius: 8px;
+    */
+    box-sizing: border-box;
+}
+
+form select {
+    height: fit-content;
+}
+#terms {
+    width: unset;
+}
+.form-error {
+    display: none;
+    color: red;
+    margin: 2px;
 }
 
 /* home */
@@ -370,6 +405,38 @@ form textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 300px;
+}
+
+[name=card-type] {
+    display: none;
+}
+
+[name=card-type] + label {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    border-radius: 8px;
+}
+
+[name=card-type] + label i {
+    font-size: 28px;
+}
+
+[name=card-type]:checked + label {
+    background-color: #c75252;   
+}
+.collapse-toggle {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid;
+    border-top: solid;
+}
+.collapse-toggle > * {
+    padding: 0 16px;
 }
 
 .additional-information img {
@@ -414,9 +481,6 @@ form textarea {
 .checkout-product .discount{
     grid-area: discount;
     align-self: center;
-}
-#cvc {
-    width: 10%;
 }
 
 /* product details */
@@ -541,22 +605,57 @@ fieldset {
 }
 
 /* sign in */
-
-#hide {
-    display: none;
+.center {
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
-.delivery-information {
-    max-width: 400px;
-}
-.create-account {
-    display: none;
-}
-#hide:checked ~ .sign-in .existing-account {
-    display: none;
-} 
-#hide:checked ~ .sign-in .create-account {
+.sign-in {
     display: flex;
 }
+.sign-in_choice {
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    background-color: #1A1F3C;
+    color: #FFF;
+    text-align: center;
+    box-shadow: 0 0 16px 8px rgba(0,0,0,0.25);
+    cursor: pointer;
+}
+.sign-in_active {
+    box-shadow: inset 0 0 16px 8px rgba(0, 0, 0, 0.25);
+}
+.existing-account {
+    width: 100%;
+    max-width: 100%;
+    margin: 100px;
+    overflow: hidden;
+    transition: max-width 0.3s;
+}
+.new-account {
+    width: 100%;
+    max-width: 100%;
+    margin: 100px;
+    overflow: hidden;
+    transition: max-width 0.3s;
+}
+.vertical-collapse {
+    max-width: 0;
+    margin: 100px 0;
+}
+.sign-options {
+    width: 100%;
+    display: flex;
+}
+.sign-options button {
+    width: 100%;
+}
+
+.sign-in form > * {
+    margin: 8px;
+}
+
 
 /* contact */
 .costumer-support {
@@ -748,37 +847,48 @@ fieldset {
     }
     /* sign in */
     .sign-on {
-        grid-template-rows: auto 500px 500px;
+        display: flex;
+        flex-direction: column;
+    }
+    .center {
+        width: 800px;
+        margin: auto;
     }
     .sign-in {
-        grid-column: 1 / 4;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
+        width: 100%;
+        position: relative;
     }
     .sign-in form {
-        max-width: 400px;
+        width: 25%;
+    }
+    .sign-left {
+        justify-content: flex-end;
+    }
+    .sign-right {
+        justify-content: flex-start;
     }
     .create-account {
         display: flex;
     }
     .picture-slider {
-        grid-column: 1 / 4;
         background: url(../images/cyberpunk-spring-plains-sun.jpeg);
         width: 50%;
-        height: 500px;
+        height: 100%;
         background-size: cover;
-        position: relative;
-        bottom: 516px;
-        left: 50%;
+        position: absolute;
+        right: 0;
     }
     #hide:checked ~ .sign-in .existing-account {
         display: flex;
     }
-    #hide:checked ~ .picture-slider {
+    .slider-left {
         animation-name: slide;
-        animation-duration: 3s;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+    }
+    .slider-right {
+        animation-name: slide2;
+        animation-duration: 2s;
         animation-fill-mode: forwards;
     }
     @keyframes slide {
@@ -787,6 +897,15 @@ fieldset {
         }
         100% {
             left: 0;
+        }
+    }
+
+    @keyframes slide2 {
+        0% {
+            right: 50%;
+        }
+        100% {
+            right: 0;
         }
     }
     /* contact */

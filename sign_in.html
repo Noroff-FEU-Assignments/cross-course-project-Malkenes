@@ -49,36 +49,41 @@
     <section class="page-header">
       <h1>Sign in</h1>
     </section>
-    <input type="checkbox" id="hide">
-    <div class=" sign-in boxed">
-      <form action="index.html" class="existing-account">
-        <input type="email" id="email" placeholder="Email" aria-label="email">
-        <input type="password" id="password" placeholder="Password" aria-label="password">
-        <button class="button">SIGN IN</button>
-        <label for="hide">create account</label>
-      </form>
-      <form action="index.html" class="create-account">
-        <input type="text" id="first-name" placeholder="First name" aria-label="first name">
-        <input type="text" id="last-name" placeholder="Last name" aria-label="Last name">
-        <input type="email" id="email.new" placeholder="Email" aria-label="email">
-        <input type="tel" id="phone" placeholder="Phone" aria-label="phone number">
-        <input type="text" id="adress" placeholder="Adress" aria-label="adress">
-        <div>
-          <select name="country" id="country" aria-label="select country">
-            <option value="norway">Norway</option>
-            <option value="sweden">Sweden</option>
-            <option value="denmark">Denmark</option>
-            <option value="united-kingdom">United Kingdom</option>
-          </select>
-          <input type="text" id="region" placeholder="Region" aria-label="region">
-        </div>
-        <input type="password" id="create-password" placeholder="Password" aria-label="password">
-        <input type="password" id="repeat-password" placeholder="Repeat Password" aria-label="repeat password">
-        <button class="button">CREATE ACCOUNT</button>
-        <label for="hide">sign in</label>
-      </form>
-    </div>
-    <div class="picture-slider"></div>
+    <section class="center">
+      <div class="sign-options">
+        <h2 class="sign-in_choice sign-in_active" id="switch">SIGN IN</h2>
+        <h2 class="sign-in_choice" id="switch-back">CREATE ACCOUNT</h2>
+      </div>
+      <div class="sign-in">
+        <form class="existing-account">
+          <div>
+            <input type="text" id="sign-in-email" placeholder="Enter your email" aria-label="enter your email adress">
+            <p class="form-error" id="sign-in-email-error">Email address invalid</p>
+            <p class="form-error" id="email-unregistered">Email address not registered</p>
+          </div>
+          <div>
+            <input type="password" id="password" placeholder="Enter your password" aria-label="enter your password">
+            <p class="form-error" id="password-error">Incorrect password</p>
+          </div>
+          <button class="button">Sign in</button>
+        </form>
+        <form class="new-account vertical-collapse">
+          <div>
+            <input type="text" id="new-email" placeholder="Enter your email" aria-label="enter your email">
+            <p class="form-error" id="new-email-error">Email address invalid</p>
+          </div>
+          <div>
+            <input type="password" id="new-password" placeholder="Create password" aria-label="create password">
+            <p class="form-error" id="new-password-error">Password to weak</p>
+          </div>
+          <div>
+            <input type="password" id="repeat-password" placeholder="Repeat password" aria-label="repeat password">
+            <p class="form-error" id="repeat-password-error">Passwords are not the same</p>
+          </div>
+          <button class="button">Create account</button>
+        </form>
+        <div class="picture-slider"></div>
+    </section>
   </main>
   <footer>
     <p> copyright &copy; all rights reserved</p>
@@ -100,5 +105,6 @@
       <i class="fa-brands fa-tiktok"></i>
     </div>
   </footer>
+  <script src="js/signIn.js" type="module"></script>
 </body>
 </html>
