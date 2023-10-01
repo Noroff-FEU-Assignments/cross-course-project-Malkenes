@@ -28,22 +28,39 @@
 </head>
 <body>
   <header>
-    <a href="../index.html"><img src="../images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
-    <input type="checkbox" id="menu-checkbox">
-    <label for="menu-checkbox" class="hamburger-icon" aria-label="menu"><i class="fas fa-bars"></i></label>
-    <label for="search-bar" class="search-icon" aria-label="search"><i class="fas fa-search"></i></label>
-    <input type="checkbox" id="search-bar">
-    <input type="text" placeholder="Search" class="search" aria-label="search" >
     <nav>
       <ul>
-        <li><a href="../browse_games.html">BROWSE</a></li>
-        <li><a href="../sell_games.html">SELL</a></li>
-        <li><a href="../contact.html">CONTACT</a></li>
-        <li><a href="../about.html">ABOUT</a></li>
+        <li class="icon-li">
+          <label for="menu-checkbox" class="hamburger-icon" aria-label="menu"><i class="fas fa-bars"></i></label>
+        </li>
+        <input type="checkbox" id="menu-checkbox">
+        <div class="nav-links">
+          <li><a href="../browse_games.html">BROWSE</a></li>
+          <li><a href="../sell_games.html">SELL</a></li>
+          <li><a href="../contact.html">CONTACT</a></li>
+          <li><a href="../about.html">ABOUT</a></li>
+        </div>
+        <li class="logo-li">
+          <a href="../index.html"><img src="../images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+        </li>
+        <li>
+          <a href="../checkout.html" aria-label="checkout">
+            <i class="fas fa-bag-shopping">
+              <div id="current-cart"></div>
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="../sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
+        </li>
+        <li class="search-li">
+          <div class="search-container">
+            <input type="search" name="" id="search" placeholder="search">
+            <div class="search-results" id="search-results"></div>
+          </div> 
+        </li>
       </ul>
     </nav>
-    <a href="../checkout.html" aria-label="checkout"><i class="fas fa-bag-shopping"></i></a>
-    <a href="../sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
   </header>
   <main class="product_details">
     <div class="product_images"> <!--no header so div instead of section-->
@@ -89,6 +106,7 @@
       <i class="fa-brands fa-tiktok"></i>
     </div>
   </footer>
+  <script src="../js/main.js" type="module"></script>
   <script src="../js/game.js" type="module"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-import {load, save} from "./functions/cart.js"
+import {load, save , updateCartItemCount} from "./functions/cart.js"
 import * as validators from "./modules/formValidation.js";
 import { emailValidation } from "./modules/formValidation.js";
 import { phoneValidation } from "./modules/formValidation.js";
@@ -57,6 +57,7 @@ increments.forEach((element) => {
         search.quantity += 1;
         save("cart" , shoppingCart);
         update(selectedItem);
+        updateCartItemCount();
     })
 })
 
@@ -71,6 +72,7 @@ decrements.forEach((element) => {
         }
         save("cart" , shoppingCart);
         update(selectedItem);
+        updateCartItemCount();
     })
 })
 
@@ -84,7 +86,7 @@ trashCans.forEach((element) => {
         let removedItem = document.getElementById(selectedItem);
         removedItem.parentNode.removeChild(removedItem);
         totalPrice();
-
+        updateCartItemCount();
     })
 })
 let update = (id) => {
