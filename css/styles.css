@@ -306,6 +306,9 @@ form select {
 }
 
 /* home */
+.index-main {
+    display: block;
+}
 .carousel-wrapper {
     height: 300px;
     display: flex;
@@ -363,22 +366,35 @@ form select {
 }
 .sales {
     display: flex;
-    flex-direction: column;
-    justify-content: end;
+    flex-wrap: wrap;
     position: relative;
     width: 100%;
-    height: 400px;
-    background: url(../images/Spring-sale.jpg);
-    background-size: cover;
-    background-position: right;
-    border-radius: 16px;
-    cursor: pointer;
 }
-.sales p {
+.sales > div {
     position: relative;
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
     width: 50%;
-    margin: 16px;
-    background: #1A1F3C;
+    padding: 16px;
+    overflow: hidden;
+}
+.sale-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.sale-tag {
+    position: absolute;
+    width: 50%;
+    height: 40px;
+    top: 0;
+    background-color: #3E8914;
+    transform: rotate(310deg) translate(-35%);
+}
+.sale-tag p {
+    text-align: center;
 }
 /* about */
 
@@ -491,9 +507,28 @@ form select {
 .product_details {
     display: block;
 }
+.product-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+.buy-sell-buttons {
+    display: flex;
+    gap: 16px;
+}
+.buy-sell-buttons input {
+    display: none;
+}
+.buy-sell-buttons label {
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    background: #1A1F3C;
+}
 .product-details {
     display: flex;
     flex-direction: column;
+    margin: 16px 0;
     gap: 16px;
 }
 .product_image {
@@ -503,17 +538,19 @@ form select {
     background-position: center;
 }
 .product-buy-sell {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     order: -1;
-}
-.product-details > .boxed {
-    width: 100%;
+    gap: 16px;
 }
 .description {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    gap: 16px;
 }
 .tags {
-    flex: 1;
     align-items: flex-end;
     display: flex;
     flex-wrap: wrap;
@@ -525,8 +562,11 @@ form select {
 }
 
 .product_images img {
-    object-fit: contain;
+    object-fit: cover;
+    position: center;
     width: 100%;
+    max-height: 500px;
+    border-radius: 16px;
 }
 .gameplay_images img {
     width: 65px;
@@ -805,18 +845,11 @@ fieldset {
         grid-template-columns: repeat(4, 1fr);
     }
     .carousel-wrapper {
-        height: 400px;
+        height: 500px;
     }
-    .game-1 {
-        background-image: url(../images/new_releases_space_war_big.jpg);
+    .sales {
+        flex-wrap: nowrap;
     }
-    .game-2 {
-        background-image: url(../images/new_releases_boxer_big.jpg);
-    }
-    .game-3 {
-        background-image: url(../images/new_releases_super_duper_big.jpg);
-    }
-
     /* checkout */
     .checkout {
         grid-column: 2 / 4;
@@ -832,20 +865,18 @@ fieldset {
     }
 
     /* product details */
+    .product-hero {
+        grid-template-columns: 3fr 2fr;
+    }
     .product-details {
         flex-direction: row;
     }
+    .product-details > .boxed {
+        width: 100%;
+    }    
     .product-buy-sell {
-        order: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        order: 0;        
     }
-    .product_images img {
-        height: 500px;
-        width: unset;
-    }
-
     /* browse games */
     
     .browse {

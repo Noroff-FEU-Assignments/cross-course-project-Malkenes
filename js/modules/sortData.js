@@ -17,6 +17,10 @@ export let sortByPrice = (data) => {
     return sortedData;
 }
 
+export let sortOnSale = (data) => {
+    let sortedData = data.filter((item => item.onSale));
+    return sortedData;
+}
 let currentPrice = (data) => {
     if (data.onSale) {
         return data.discountedPrice;

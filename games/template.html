@@ -63,22 +63,26 @@
     </nav>
   </header>
   <main class="product_details">
-    <div class="product-details">
+    <section class="product-hero boxed">
       <div class="product_images">
       </div>
       <div class="product-buy-sell">
-        <button>Buy</button>
-        <button>Sell</button>  
-        <section class="description boxed">
-        </section>
+        <div class="buy-sell-buttons">
+          <label for="buy-option">BUY</label>
+          <label for="sell-option">SELL</label>
+          <input type="radio" name="buy-sell" id="buy-option" value="buy-option" checked></input>
+          <input type="radio" name="buy-sell" id="sell-option" value="sell-option"></input> 
+        </div>
+        <div class="description">
+        </div>
       </div>
-    </div>
+    </section>
     <div class="product-details">
       <section class="additional_information boxed">
       </section>  
       <section class="review boxed">
         <h2>Write a review</h2>
-        <form action="">
+        <form action="" class="delivery-information">
           <input type="text" name="name" id="name" placeholder="Name of reviewer" aria-label="name of reviewer">
           <input type="text" name="title" id="title" placeholder="Title of review" aria-label="title of review">
           <div class="stars">

@@ -1,11 +1,11 @@
 import { makeApiCall } from "./render/renderGames.js";
 import { updateCartItemCount } from "./functions/cart.js";
-import { searchItem , createCarousel} from "./modules/elementGenerator.js";
-import { sortByDateNew , sortByTitle , sortByPrice } from "./modules/sortData.js";
+import { searchItem , createCarousel , createSalePromotion, createSellItem} from "./modules/elementGenerator.js";
+import { sortByDateNew , sortByTitle , sortByPrice , sortOnSale } from "./modules/sortData.js";
 import { signIn , register , submitDeliveryForm , submitBillingForm , toggleCollapse , verticalToggleCollapse} from "./modules/formValidation.js";
 const search = document.querySelector("#search");
 const searchResults = document.querySelector("#search-results");
-let listOfGames = await makeApiCall();
+const listOfGames = await makeApiCall();
 updateCartItemCount();
 search.addEventListener("input" , function() {
     searchResults.innerHTML = "";
@@ -33,9 +33,13 @@ if (carouselContainer) {
 
 const salesPromotion = document.querySelector(".sales");
 if (salesPromotion) {
+    createSalePromotion();
     salesPromotion.addEventListener("click", function(){
         localStorage.setItem("genre", "on-sale");
         document.location.href = "../browse_games.html";
+    })
+    sortOnSale(listOfGames).slice(0,4).forEach(el => {
+        salesPromotion.append(createSellItem(el));
     })
 }
 
@@ -43,7 +47,7 @@ const browseByCategory = document.querySelectorAll(".category li");
 if (browseByCategory) {
     browseByCategory.forEach(el => {
         el.addEventListener("click", function(){
-        localStorage.setItem("genre", browseByCategory[i].id);
+        localStorage.setItem("genre", el.id);
         document.location.href = "../browse_games.html";
         })
     })   

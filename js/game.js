@@ -1,5 +1,5 @@
 import { showLoadingIndicator , errorMessage} from "./render/renderGames.js";
-import { createPricetag } from "./functions/createElement.js";
+import { createPrice } from "./modules/elementGenerator.js";
 import { save , load } from "./functions/cart.js";
 
 const gameDescription = document.querySelector(".description");
@@ -28,61 +28,91 @@ async function getGameData() {
 }
 
 
-function createHtml(data) {    
+function createHtml(data) {
+  const imageContainer = document.querySelector(".product_images");
+  imageContainer.innerHTML = `<img src="${data.image}"></img>`
 
-    const imageContainer = document.querySelector(".product_images");
-    imageContainer.innerHTML = `<img src="${data.image}"></img>`
-    gameDescription.innerHTML = `
-    <div>
-      <h1>${data.title}</h1>
-      <h2>${data.description}</h2>
-      <button class="button" 
-        data-image=${data.image}
-        data-title=${data.title}
-        data-price=${data.price}>
-        Add to cart
-      </button>
-      <div class= "test"></div>
-      <div class="tags">
+  const options = document.getElementsByName("buy-sell");
+  options.forEach((option) => {
+    option.addEventListener("change" , (event) => {
+      if (option.value === "buy-option") {
+        gameDescription.innerHTML = `
+        <h1>${data.title}</h1>
+        <h2>${data.description}</h2>
+        <div class="game-container_discount">${createPrice(data)}</div>
+        <button class="button">Add to cart</button>
+        <div class="tags">
           <p>${data.genre}</p>
-      </div>
-    </div>
-    `
-    const price = document.querySelector(".test")
-    price.append(createPricetag(data));
-
-    additionInformation.innerHTML = `
-    <div>
-        <h2>Parental advisory</h2>
-        <p>${data.ageRating}</p>
-      </div>
-      <div>
-        <h2>System requirments</h2>
-        <p>Playbox</p>
-      </div>
-      <div>
-        <h2>Additional information</h2>
-        <p>Release date: ${data.released}</p>
-        <p>developer:</p>
-      </div>
-    `
-    const callToAction = document.querySelector(".button");
-
-    callToAction.addEventListener("click", function() {
-      let cart = load("cart") || [];
-      const gameInCart = cart.find(item => item.data.id === data.id);
-      if (gameInCart) {
-        gameInCart.quantity++
+        </div>
+        `
+        addToCart(data);  
       } else {
-      cart.push({
-        data,
-        quantity: 1
-      });
+        gameDescription.innerHTML = `
+        <h1>${data.title}</h1>
+        <div>
+          <h2>Sell this game for:</h2>
+          ${getSellPrice(data)}
+        </div>
+        <button class="button">Sell now</button>
+        `
       }
-      save("cart" , cart);
-      document.location.href = "../checkout.html";
-    });
+    })
+  })
+  
+  gameDescription.innerHTML = `
+  <h1>${data.title}</h1>
+  <h2>${data.description}</h2>
+  <div class="game-container_discount">${createPrice(data)}</div>
+  <button class="button">Add to cart</button>
+  <div class="tags">
+    <p>${data.genre}</p>
+  </div>
+  `
+  additionInformation.innerHTML = `
+  <div>
+    <h2>Parental advisory</h2>
+    <p>${data.ageRating}</p>
+  </div>
+  <div>
+    <h2>System requirments</h2>
+    <p>Playbox</p>
+  </div>
+  <div>
+    <h2>Additional information</h2>
+    <p>Release date: ${data.released}</p>
+    <p>developer:</p>
+  </div>
+  `
+  addToCart(data);
 }
 
-
 getGameData();
+
+function addToCart(data) {
+  const callToAction = document.querySelector(".button");
+
+  callToAction.addEventListener("click", function() {
+    let cart = load("cart") || [];
+    const gameInCart = cart.find(item => item.data.id === data.id);
+    if (gameInCart) {
+      gameInCart.quantity++
+    } else {
+    cart.push({
+      data,
+      quantity: 1
+    });
+    }
+    save("cart" , cart);
+    document.location.href = "../checkout.html";
+  });
+}
+
+function getSellPrice(data) {
+  let sellPrice = 0;
+  if (data.onSale) {
+    sellPrice = (data.discountedPrice/100)*30;
+  } else {
+    sellPrice = (data.price/100)*30;
+  }
+  return `<p class="price">${sellPrice.toFixed(2)}</p>`
+}

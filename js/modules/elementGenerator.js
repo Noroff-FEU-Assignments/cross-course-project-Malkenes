@@ -1,4 +1,3 @@
-import { createPricetag } from "../functions/createElement.js";
 
 export let searchItem = (data) => {
     return `
@@ -80,4 +79,28 @@ function createMainItem(el) {
     </div>
     `
 }
+export function createSalePromotion() {
+    const dayNames = ["SUNDAY", "MONDAY", "TUESDAY" , "WEDENSDAY" , "THURSDAY" , "FRIDAY" , "SATURDAY"];
+    const currentDate = new Date();
+    const currentDay = currentDate.getDay();
+    const dayToday = document.querySelector("#today-day");
+    dayToday.innerHTML = dayNames[currentDay];
+}
+export function createSellItem(el) {
+    const sellItem = document.createElement("div");
+    sellItem.innerHTML = `
+    <a class="sale-image"
+    style="background-image: url(${el.image})"
+    href="games/template.html?id=${el.id}">
+    </a>
+    <div class="sale-tag">
+        <p>${discountPercent(el.price, el.discountedPrice)}%</p>
+    </div>
+    `
+    return sellItem;
+}
+let discountPercent = (price , newPrice) => {
+    return (((price - newPrice)*100)/price).toFixed(0)
+}
+
 
