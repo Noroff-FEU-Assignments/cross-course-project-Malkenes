@@ -28,23 +28,24 @@ async function getGameData() {
 }
 
 
-function createHtml(data) {
+function createHtml(data) {    
 
-    const gameCover = document.querySelector("#cover");
-    gameCover.src = data.image;
-    
-    gameDescription.innerHTML = 
-    `<h1>${data.title}</h1>
-    <h2>${data.description}</h2>
-    <button class="button" 
-      data-image=${data.image}
-      data-title=${data.title}
-      data-price=${data.price}>
-      Add to cart
-    </button>
-    <div class= "test"></div>
-    <div class="tags">
-        <p>${data.genre}</p>
+    const imageContainer = document.querySelector(".product_images");
+    imageContainer.innerHTML = `<img src="${data.image}"></img>`
+    gameDescription.innerHTML = `
+    <div>
+      <h1>${data.title}</h1>
+      <h2>${data.description}</h2>
+      <button class="button" 
+        data-image=${data.image}
+        data-title=${data.title}
+        data-price=${data.price}>
+        Add to cart
+      </button>
+      <div class= "test"></div>
+      <div class="tags">
+          <p>${data.genre}</p>
+      </div>
     </div>
     `
     const price = document.querySelector(".test")

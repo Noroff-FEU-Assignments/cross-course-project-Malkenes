@@ -63,28 +63,35 @@
     </nav>
   </header>
   <main class="product_details">
-    <div class="product_images"> <!--no header so div instead of section-->
-      <img alt="Game cover" id="cover">
+    <div class="product-details">
+      <div class="product_images">
+      </div>
+      <div class="product-buy-sell">
+        <button>Buy</button>
+        <button>Sell</button>  
+        <section class="description boxed">
+        </section>
+      </div>
     </div>
-    <section class="boxed description">
-    </section>
-    <section class="boxed additional_information">
-    </section>
-    <section class="boxed review">
-      <h2>Write a review</h2>
-      <form action="">
-        <input type="text" name="name" id="name" placeholder="Name of reviewer" aria-label="name of reviewer">
-        <input type="text" name="title" id="title" placeholder="Title of review" aria-label="title of review">
-        <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <textarea name="review" id="review" max-cols="30" rows="10" placeholder="write here" aria-label="write here"></textarea>
-      </form>
-    </section>
+    <div class="product-details">
+      <section class="additional_information boxed">
+      </section>  
+      <section class="review boxed">
+        <h2>Write a review</h2>
+        <form action="">
+          <input type="text" name="name" id="name" placeholder="Name of reviewer" aria-label="name of reviewer">
+          <input type="text" name="title" id="title" placeholder="Title of review" aria-label="title of review">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <textarea name="review" id="review" max-cols="30" rows="10" placeholder="write here" aria-label="write here"></textarea>
+        </form>
+      </section>
+    </div>
   </main>
   <footer>
     <p> copyright &copy; all rights reserved</p>

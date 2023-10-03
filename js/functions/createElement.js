@@ -21,9 +21,12 @@ export function createBackground() {
 export function createImageElement(image) {
     const imageContainer = document.createElement("div");
     imageContainer.setAttribute("class" , "game-container_image");
+    imageContainer.style.backgroundImage = `url(${image})`;
+    /*
     const imageElement = document.createElement("img");
     imageElement.src = image
     imageContainer.append(imageElement);
+    */
     return imageContainer;
 }
 export function createPricetag(el) {

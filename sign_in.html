@@ -68,11 +68,11 @@
     </section>
     <section class="center">
       <div class="sign-options">
-        <h2 class="sign-in_choice sign-in_active" id="switch">SIGN IN</h2>
-        <h2 class="sign-in_choice" id="switch-back">CREATE ACCOUNT</h2>
+        <h2 class="sign-in_choice sign-in_active" id="sign-in-btn">SIGN IN</h2>
+        <h2 class="sign-in_choice" id="register-btn">CREATE ACCOUNT</h2>
       </div>
       <div class="sign-in">
-        <form class="existing-account">
+        <form class="existing-account" id="sign-in-form">
           <div>
             <input type="text" id="sign-in-email" placeholder="Enter your email" aria-label="enter your email adress">
             <p class="form-error" id="sign-in-email-error">Email address invalid</p>
@@ -84,7 +84,7 @@
           </div>
           <button class="button">Sign in</button>
         </form>
-        <form class="new-account vertical-collapse">
+        <form class="new-account vertical-collapse" id="register-form">
           <div>
             <input type="text" id="new-email" placeholder="Enter your email" aria-label="enter your email">
             <p class="form-error" id="new-email-error">Email address invalid</p>
@@ -123,6 +123,5 @@
     </div>
   </footer>
   <script src="js/main.js" type="module"></script>
-  <script src="js/signIn.js" type="module"></script>
 </body>
 </html>
