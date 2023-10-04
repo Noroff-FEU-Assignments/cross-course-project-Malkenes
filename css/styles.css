@@ -34,7 +34,6 @@ input[type=search] {
 .search-results {
     max-height: 0px;
     width: 100%;
-    min-width: 350px;
     position: absolute;
     overflow: hidden;
     z-index: 98;
@@ -222,16 +221,21 @@ main {
     margin: 0 8px;
 }
 
-#loading-indicator {
+.loading-indicator {
     height: 100%;
-    width: 200px;
+    width: 100%;
     background-image: url(../images/GameHub_Logo.png);
     background-size: contain;
     background-repeat: no-repeat;
-    position: relative;
+    background-position: center;
+    position: absolute;
+    background-color: #1F1F1F;
+    z-index: 30;
+    /*
     animation-name: spin;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+    */
 
 }
 
@@ -334,6 +338,7 @@ form select {
     border-radius: 100%;
     background-color: #1A1F3C;
     border: solid;
+    text-align: center;
     cursor: pointer;
 }
 .overlay.active {
@@ -776,9 +781,10 @@ fieldset {
     font-size: 150px;
 }
 /* sell games*/
-.sell-games {
+.sell-instructions {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
 @media (min-width: 800px) {
@@ -813,6 +819,7 @@ fieldset {
     }
     .search-results {
         top: 49px;
+        min-width: 350px;
     }  
     .nav-links {
         display: contents;
@@ -994,6 +1001,10 @@ fieldset {
     .success .recommended {
         grid-column: 2 / 4;
         
+    }
+    /* sell games */
+    .sell-instructions {
+        flex-direction: row;
     }
 }
 @media (min-width: 1200px) {

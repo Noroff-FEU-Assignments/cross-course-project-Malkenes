@@ -7,7 +7,7 @@ export async function makeApiCall() {
         const response = await fetch(url);
 
         const result = await response.json();
-
+    
         return result;
 
     } catch(error) {
@@ -35,15 +35,6 @@ export function createGameCard(el) {
 
 export function showLoadingIndicator(el) {
     el.innerHTML = `<div id="loading-indicator"></div>`
-}
-
-// returns an array from most recent realeses
-export function sortByDate(data) {
-
-    let sortedData = data.sort( 
-        (date1 , date2 ) => (date1.released < date2.released) ?
-        1 : (date1.released > date2.released) ? -1 : 0);
-    return sortedData;
 }
 
 export function errorMessage(el) {

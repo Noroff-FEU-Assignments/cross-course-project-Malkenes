@@ -15,11 +15,13 @@ export function remove(key) {
 export let updateCartItemCount = () => {
     let currentCart = document.querySelector("#current-cart");
     let currentCartItems = 0;
-    let cart = load("cart");
-
-    cart.forEach((element) => {
-        currentCartItems += element.quantity;
-    })
+    let cart = load("cart") || [];
+    if (cart.lenght > 0) { 
+        cart.forEach((element) => {
+            currentCartItems += element.quantity;
+        });
+    }
+    
     if (currentCartItems > 0) {
         currentCart.classList.add("current-cart");
         if (currentCartItems > 9) {

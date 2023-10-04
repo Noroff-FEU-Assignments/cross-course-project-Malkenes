@@ -5,7 +5,7 @@ import { sortByDateNew , sortByTitle , sortByPrice , sortOnSale } from "./module
 import { signIn , register , submitDeliveryForm , submitBillingForm , toggleCollapse , verticalToggleCollapse} from "./modules/formValidation.js";
 const search = document.querySelector("#search");
 const searchResults = document.querySelector("#search-results");
-const listOfGames = await makeApiCall();
+let listOfGames = await makeApiCall();
 updateCartItemCount();
 search.addEventListener("input" , function() {
     searchResults.innerHTML = "";
