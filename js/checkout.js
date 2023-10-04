@@ -25,10 +25,9 @@ let generateShop = () => {
 
 let createPrice = (data) => {
     if (data.onSale) {
-        return `<div class="price-container">
+        return `
             <p class="price">$${data.discountedPrice}</p>
             <p class="old-price">$${data.price}</p>
-            </div>
             <p class="discount">${discountPercent(data.price , data.discountedPrice)}%</p>
             `
             
@@ -112,11 +111,9 @@ let totalPrice = () => {
         </div>`;
     } else {
         totalContainer.innerHTML = `
-        <h2>TOTAL</h2>
-        <div class="price-container">
+        <h3>TOTAL</h3>
         <p class="price">$${price}</p>
         <p class="old-price">$${oldPrice}</p>
-        </div>
         <p class="discount">${discountPercent(oldPrice , price)}%</p>`
     }
 }

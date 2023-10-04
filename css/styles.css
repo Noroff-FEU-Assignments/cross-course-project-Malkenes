@@ -29,6 +29,7 @@ input[type=search] {
     width: 100%;
     min-height: 24px;
     padding: 8px;
+    font-size: 16px; /* prevents zooming on mobile device*/
 }
 
 .search-results {
@@ -313,21 +314,29 @@ form select {
 .index-main {
     display: block;
 }
-.carousel-wrapper {
-    height: 300px;
+.home-hero {
+    min-height: 300px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
     background-color: #000000be;
     background-blend-mode: overlay;
     border-radius: 16px;
+    padding: 16px;
     background-size: cover;
     background-position: center;
     transition: all 1s ease-in-out;
 }
+.carousel-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex: 1;
+    align-items: flex-end;
+}
 .carousel-wrapper > * {
     max-width: 50%;
-    padding: 16px;
 }
 .carousel-wrapper h3 {
     font-size: 26px;
@@ -351,23 +360,33 @@ form select {
     gap: 16px;
     padding: 16px;
 }
-
-.category {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
+.sale-promotion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #3E8914;
+    max-width: 600px;
+    padding: 16px;
+    gap: 16px;
+    border-radius: 16px;
 }
-
-.category li {
-    display: block;
-    font-size: 20px;
-    margin: 5px;
-    padding: 10px;
+.sale-promotion h3 {
+    font-size: 24px;
+}
+.timer {
+    display: flex;
+    gap: 16px;
+}
+.timer > div {
     background: #1A1F3C;
     text-align: center;
-    border: solid 1px;
-    border-radius: 8px;
-    cursor: pointer;
+}
+#hours,
+#minutes,
+#seconds {
+    font-size: 24px;
+    margin: 16px;
 }
 .sales {
     display: flex;
@@ -401,6 +420,23 @@ form select {
 .sale-tag p {
     text-align: center;
 }
+.category {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+}
+.category li {
+    display: block;
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px;
+    background: #1A1F3C;
+    text-align: center;
+    border: solid 1px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 /* about */
 
 .about .boxed {
@@ -472,16 +508,18 @@ form select {
     padding: 10px 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 40px 30px 30px;
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
     "game-cover title title"
     "game-cover items price"
-    "game-cover discount price";
+    "game-cover discount discount-price";
 }
 .checkout_image {
     grid-area: game-cover;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 16px;
 }
 #total {
     border-top: solid;
@@ -494,14 +532,16 @@ form select {
 .trash {
     grid-area: items;
     display: flex;
-    gap: 32px;
+    gap: 16px;
     align-items: center;
+    font-size: 16px;
 }
-.checkout-product .price-container {
+.checkout-product .price {
     grid-area: price;
+    margin: 16px 0;
 }
-.price-container p {
-    margin: 0;
+.checkout-product .old-price {
+    grid-area: discount-price;
 }
 .checkout-product .discount{
     grid-area: discount;
@@ -527,6 +567,7 @@ form select {
 .buy-sell-buttons label {
     width: 100%;
     padding: 16px;
+    border-radius: 16px;
     text-align: center;
     background: #1A1F3C;
 }
@@ -727,50 +768,7 @@ fieldset {
 
 
 /* contact */
-.costumer-support {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-.support-icon {
-    font-size: 36px;
-}
-#support-checkbox {
-    display: none;
-}
-#support {
-    display: none;
-    position: absolute;
-    bottom: 10%;
-    border-radius: 8px;
-}
-#support-checkbox:checked ~ #support{
-    display: block;
-}
-.faq {
-    display: flex;
-    flex-direction: column;
-}
-.faq input {
-    display: none;
-}
-.faq label {
-    padding: 16px 0;
-    background: #000;
-    border: solid #1F1F1F;
-}
-.faq p {
-    display: none;
-}
-#question-1:checked ~ .answer-1 {
-    display: block;
-}
-#question-2:checked ~ .answer-2 {
-    display: block;
-}
-#question-3:checked ~ .answer-3 {
-    display: block;
-}
+
 /* checkout success*/
 .share {
     display: flex;
@@ -838,21 +836,11 @@ fieldset {
     }
 
     /* home */
-    .new-releases {
-        grid-column: 1 / 3;
-    }
-    .promoted {
-        grid-column: 3 / 4;
-    }
-    .browse-by-category {
-        grid-column: 1 / 4;
-        grid-row: 3;
-    }
     .category {
         grid-template-columns: repeat(4, 1fr);
     }
-    .carousel-wrapper {
-        height: 500px;
+    .home-hero {
+        min-height: 500px;
     }
     .sales {
         flex-wrap: nowrap;
@@ -981,18 +969,9 @@ fieldset {
         width: max-content;
     }
     .contact-wrapper {
-        grid-column: 1 / 4;
         background-repeat: no-repeat;
-        background-position: right;
-        background-size: cover;
+        background-size: contain;
         background-image: url(../images/Nintendo-Switch-Console-Transparent-PNG.png);
-    }
-    .costumer-support {
-        grid-column: 3;
-    }
-    .faq {
-        grid-column: 1 / 3;
-        grid-row: 3;
     }
     /* checkout success */
     .share {

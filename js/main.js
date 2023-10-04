@@ -34,7 +34,9 @@ if (carouselContainer) {
 const salesPromotion = document.querySelector(".sales");
 if (salesPromotion) {
     createSalePromotion();
-    salesPromotion.addEventListener("click", function(){
+    setInterval(createSalePromotion,1000);
+    const allSales = document.querySelector("#all-sales");
+    allSales.addEventListener("click", function(){
         localStorage.setItem("genre", "on-sale");
         document.location.href = "../browse_games.html";
     })

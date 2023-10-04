@@ -66,8 +66,9 @@ function createCarouselItem(el) {
    return carouselItem;
 }
 function createMainItem(el) {
+    const homeHero = document.querySelector(".home-hero");
     const carouselWrapper = document.querySelector(".carousel-wrapper");
-    carouselWrapper.style.backgroundImage = "url(" + el.image + ")";
+    homeHero.style.backgroundImage = "url(" + el.image + ")";
     carouselWrapper.setAttribute("href", "../games/template.html?id=" + el.id + "&title=" + el.title);
     carouselWrapper.innerHTML = `
     <div class="carousel-text">
@@ -80,11 +81,20 @@ function createMainItem(el) {
     `
 }
 export function createSalePromotion() {
-    const dayNames = ["SUNDAY", "MONDAY", "TUESDAY" , "WEDENSDAY" , "THURSDAY" , "FRIDAY" , "SATURDAY"];
+    const dayNames = ["SUNDAY", "MONDAY", "TUESDAY" , "WEDNESDAY" , "THURSDAY" , "FRIDAY" , "SATURDAY"];
     const currentDate = new Date();
     const currentDay = currentDate.getDay();
     const dayToday = document.querySelector("#today-day");
     dayToday.innerHTML = dayNames[currentDay];
+    const hours = document.querySelector("#hours");
+    const minutes = document.querySelector("#minutes");
+    const seconds = document.querySelector("#seconds");
+    const hoursLeft = 24-currentDate.getHours();
+    const minutesLeft = 60-currentDate.getMinutes();
+    const secondsLeft = 60-currentDate.getSeconds();
+    hours.textContent = hoursLeft.toString().padStart(2,"0");
+    minutes.textContent = minutesLeft.toString().padStart(2,"0");
+    seconds.textContent = secondsLeft.toString().padStart(2,"0");
 }
 export function createSellItem(el) {
     const sellItem = document.createElement("div");

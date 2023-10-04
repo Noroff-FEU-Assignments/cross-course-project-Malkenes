@@ -50,8 +50,12 @@ function createHtml(data) {
         gameDescription.innerHTML = `
         <h1>${data.title}</h1>
         <div>
-          <h2>Sell this game for:</h2>
-          ${getSellPrice(data)}
+          <h2>New condition get up to:</h2>
+          ${getSellPrice(data,50)}
+        </div>
+        <div>
+          <h2>Used condition get up to:</h2>
+          ${getSellPrice(data,30)}
         </div>
         <button class="button">Sell now</button>
         `
@@ -107,12 +111,12 @@ function addToCart(data) {
   });
 }
 
-function getSellPrice(data) {
+function getSellPrice(data , percent) {
   let sellPrice = 0;
   if (data.onSale) {
-    sellPrice = (data.discountedPrice/100)*30;
+    sellPrice = (data.discountedPrice/100)*percent;
   } else {
-    sellPrice = (data.price/100)*30;
+    sellPrice = (data.price/100)*percent;
   }
-  return `<p class="price">${sellPrice.toFixed(2)}</p>`
+  return `<p class="price">$${sellPrice.toFixed(2)}</p>`
 }
