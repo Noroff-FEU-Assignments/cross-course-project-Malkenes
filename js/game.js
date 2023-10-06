@@ -15,7 +15,6 @@ const url = "https://api.noroff.dev/api/v1/gamehub/" + gamesId;
 
 async function getGameData() {
     try {
-        showLoadingIndicator(gameDescription);
         const response = await fetch(url);
 
         const result = await response.json();
@@ -23,7 +22,6 @@ async function getGameData() {
         createHtml(result);
     } catch(error) {
         console.log(error);
-        errorMessage(gameDescription);
     }
 }
 

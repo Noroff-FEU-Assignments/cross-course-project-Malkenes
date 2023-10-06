@@ -16,7 +16,7 @@ export let updateCartItemCount = () => {
     let currentCart = document.querySelector("#current-cart");
     let currentCartItems = 0;
     let cart = load("cart") || [];
-    if (cart.lenght > 0) { 
+    if (cart.length > 0) { 
         cart.forEach((element) => {
             currentCartItems += element.quantity;
         });
