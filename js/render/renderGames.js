@@ -4,14 +4,16 @@ const url = "https://api.noroff.dev/api/v1/gamehub"
 
 export async function makeApiCall() {
     try {
+        showLoadingIndicator();
         const response = await fetch(url);
 
         const result = await response.json();
-    
+        showLoadingIndicator();
         return result;
 
     } catch(error) {
         console.log(error);
+        errorMessage();
     }
 }
 
@@ -33,10 +35,13 @@ export function createGameCard(el) {
     container.append(card);
 }
 
-export function showLoadingIndicator(el) {
-    el.innerHTML = `<div id="loading-indicator"></div>`
+export function showLoadingIndicator() {
+    const loadingIndicator = document.querySelector("#loading-indicator");
+    loadingIndicator.classList.toggle("loading-indicator");
 }
 
-export function errorMessage(el) {
-    el.innerHTML = `<p class="error-message">COULD NOT FETCH DATA<p>`
+export function errorMessage() {
+    const loadingIndicator = document.querySelector("#loading-indicator");
+    loadingIndicator.classList.remove("loading-indicator");
+    loadingIndicator.innerHTML = `<p class="error-message">COULD NOT FETCH DATA<p>`
 }

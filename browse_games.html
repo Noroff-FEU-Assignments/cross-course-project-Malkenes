@@ -63,6 +63,7 @@
     </nav>
   </header>
   <main class="browse">
+    <div id="loading-indicator"></div>
     <section class="page-header">
       <h1>Browse</h1>
     </section>
@@ -108,7 +109,18 @@
         <label for="open-world">OPEN WORLD</label>
       </fieldset>
     </div>
-    <section class="game-list"></section>
+    <section class="browse-list">
+      <div>
+        <select name="Sort-by" id="sort-by" aria-label="sort by">
+          <option value="sort-by">Sort by</option>
+          <option value="price-lh">Price low-high</option>
+          <option value="price-hl">Price high-low</option>
+          <option value="name-az">Name A-Z</option>
+          <option value="name-za">Name Z-A</option>
+        </select>
+      </div>
+      <div class="game-list"></div>
+    </section>
   </main>
   <footer>
     <p> copyright &copy; all rights reserved</p>
@@ -131,6 +143,5 @@
     </div>
   </footer>
   <script src="js/main.js" type="module"></script>
-  <script src="js/script.js" type="module"></script>
 </body>
 </html>

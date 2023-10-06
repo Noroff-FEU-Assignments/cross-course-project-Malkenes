@@ -1,6 +1,6 @@
 import { makeApiCall } from "./render/renderGames.js";
 import { updateCartItemCount } from "./functions/cart.js";
-import { searchItem , createCarousel , createSalePromotion, createSellItem} from "./modules/elementGenerator.js";
+import { searchItem , createCarousel , createSalePromotion, createSellItem , createPageElements , createRowElements} from "./modules/elementGenerator.js";
 import { sortByDateNew , sortByTitle , sortByPrice , sortOnSale } from "./modules/sortData.js";
 import { signIn , register , submitDeliveryForm , submitBillingForm , toggleCollapse , verticalToggleCollapse} from "./modules/formValidation.js";
 const search = document.querySelector("#search");
@@ -55,7 +55,16 @@ if (browseByCategory) {
     })   
 }
 
-/* */
+/* browse_games */
+
+const listGames = document.querySelector(".game-list");
+if (listGames) {
+    if(listGames.classList.contains("short-list")) {
+        createRowElements(listOfGames.slice(0,3));
+    } else {
+        createPageElements(listOfGames);
+    }
+}
 
 const signInForm = document.querySelector("#sign-in-form");
 if (signInForm) {
