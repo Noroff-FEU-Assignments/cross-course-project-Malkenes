@@ -62,64 +62,66 @@
       </ul>
     </nav>
   </header>
-  <main class="browse">
+  <main style="display: block;">
     <div id="loading-indicator"></div>
     <section class="page-header">
       <h1>Browse</h1>
     </section>
-    <div class="filter">
-      <input type="checkbox" name="console" id="console-checkbox">
-      <input type="checkbox" id="category-checkbox">
-      <div class="filter_mobile">
-        <label for="console-checkbox" class="console-icon">choose console</label>
-        <label for="category-checkbox" class="category-icon">choose category</label>
+    <section class="browse">
+      <div class="filter">
+        <input type="checkbox" name="console" id="console-checkbox">
+        <input type="checkbox" id="category-checkbox">
+        <div class="filter_mobile">
+          <label for="console-checkbox" class="console-icon">choose console</label>
+          <label for="category-checkbox" class="category-icon">choose category</label>
+        </div>
+        <fieldset class="boxed choose-console">
+          <legend>Console</legend>
+          <input type="checkbox" id="playbox" name="console" value="playbox">
+          <label for="playbox">PLAYBOX</label>
+          <input type="checkbox" id="windows" name="console" value="windows">
+          <label for="windows">WINDOWS</label>
+          <input type="checkbox" id="mac" name="console" value="mac">
+          <label for="mac">MAC</label>
+          <input type="checkbox" id="psp" name="console" value="psp">
+          <label for="psp">PSP</label>
+        </fieldset>
+        <fieldset class="boxed choose-category">
+          <legend>Category</legend>
+          <input type="checkbox" id="on-sale" value="on-sale">
+          <label for="on-sale" style="color: chartreuse;">ON SALE</label>
+          <input type="checkbox" id="action" name="category" value="action">
+          <label for="action">ACTION</label>
+          <input type="checkbox" id="adventure" name="category" value="adventure">
+          <label for="adventure">ADVENTURE</label>
+          <input type="checkbox" id="sports" name="category" value="sport">
+          <label for="sports">SPORT</label>
+          <input type="checkbox" id="horror" name="category" value="horror">
+          <label for="horror">HORROR</label>
+          <input type="checkbox" id="for-children" name="category" value="for-children">
+          <label for="for-children">FOR CHILDREN</label>
+          <input type="checkbox" id="adult" name="category" value="adult">
+          <label for="adult">ADULT</label>
+          <input type="checkbox" id="simulation" name="category" value="simulation">
+          <label for="simulation">SIMULATION</label>
+          <input type="checkbox" id="relaxed" name="category" value="relaxed">
+          <label for="relaxed">RELAXED</label>
+          <input type="checkbox" id="open-world" name="category" value="open-world">
+          <label for="open-world">OPEN WORLD</label>
+        </fieldset>
       </div>
-      <fieldset class="boxed choose-console">
-        <legend>Console</legend>
-        <input type="checkbox" id="playbox" name="console" value="playbox">
-        <label for="playbox">PLAYBOX</label>
-        <input type="checkbox" id="windows" name="console" value="windows">
-        <label for="windows">WINDOWS</label>
-        <input type="checkbox" id="mac" name="console" value="mac">
-        <label for="mac">MAC</label>
-        <input type="checkbox" id="psp" name="console" value="psp">
-        <label for="psp">PSP</label>
-      </fieldset>
-      <fieldset class="boxed choose-category">
-        <legend>Category</legend>
-        <input type="checkbox" id="on-sale" value="on-sale">
-        <label for="on-sale" style="color: chartreuse;">ON SALE</label>
-        <input type="checkbox" id="action" name="category" value="action">
-        <label for="action">ACTION</label>
-        <input type="checkbox" id="adventure" name="category" value="adventure">
-        <label for="adventure">ADVENTURE</label>
-        <input type="checkbox" id="sports" name="category" value="sport">
-        <label for="sports">SPORT</label>
-        <input type="checkbox" id="horror" name="category" value="horror">
-        <label for="horror">HORROR</label>
-        <input type="checkbox" id="for-children" name="category" value="for-children">
-        <label for="for-children">FOR CHILDREN</label>
-        <input type="checkbox" id="adult" name="category" value="adult">
-        <label for="adult">ADULT</label>
-        <input type="checkbox" id="simulation" name="category" value="simulation">
-        <label for="simulation">SIMULATION</label>
-        <input type="checkbox" id="relaxed" name="category" value="relaxed">
-        <label for="relaxed">RELAXED</label>
-        <input type="checkbox" id="open-world" name="category" value="open-world">
-        <label for="open-world">OPEN WORLD</label>
-      </fieldset>
-    </div>
-    <section class="browse-list">
-      <div>
-        <select name="Sort-by" id="sort-by" aria-label="sort by">
-          <option value="sort-by">Sort by</option>
-          <option value="price-lh">Price low-high</option>
-          <option value="price-hl">Price high-low</option>
-          <option value="name-az">Name A-Z</option>
-          <option value="name-za">Name Z-A</option>
-        </select>
+      <div class="browse-list">
+        <div>
+          <select name="Sort-by" id="sort-by" aria-label="sort by">
+            <option value="sort-by">Sort by</option>
+            <option value="price-lh">Price low-high</option>
+            <option value="price-hl">Price high-low</option>
+            <option value="name-az">Name A-Z</option>
+            <option value="name-za">Name Z-A</option>
+          </select>
+        </div>
+        <div class="game-list"></div>
       </div>
-      <div class="game-list"></div>
     </section>
   </main>
   <footer>

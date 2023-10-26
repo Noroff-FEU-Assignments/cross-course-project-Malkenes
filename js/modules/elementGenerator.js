@@ -1,26 +1,27 @@
-import { createGameCard } from "../render/renderGames.js";
 import { sortByTitle , sortByPrice } from "./sortData.js";
 export let searchItem = (data) => {
     return `
-    <div class ="search-image"style="background-image: url(${data.image})"></div>
+    <div class ="search-image"style="background-image: url(${data.images[0].src})"></div>
     <div class="search-info">
-        <h3>${data.title}</h3>
+        <h3>${data.name}</h3>
         <div class="row">
             ${createPrice(data)}
         </div>
     </div>
-    <a href="/games/template.html?id=${data.id}">view</a>
+    <a href="/games/template.html?id=${data.id}&title=${data.name}">view</a>
     `
 }
 export let createPrice = (data) => {
-    if (data.onSale) {
+    const sPrice = data.prices.sale_price;
+    const rPrice = data.prices.regular_price;
+    if (data.on_sale) {
         return `
-            <p class="price">$${data.discountedPrice}</p>
-            <p class="old-price">$${data.price}</p>
+            <p class="price">${data.prices.currency_symbol}${sPrice.slice(0, sPrice.length-data.prices.currency_minor_unit)}${data.prices.currency_decimal_separator}${sPrice.slice(sPrice.length - data.prices.currency_minor_unit)}</p>
+            <p class="old-price">${data.prices.currency_symbol}${rPrice.slice(0, rPrice.length-data.prices.currency_minor_unit)}${data.prices.currency_decimal_separator}${sPrice.slice(sPrice.length - data.prices.currency_minor_unit)}</p>
             `;
     } else {
         return `
-        <p class= "price">$${data.price}</p>
+        <p class="price">${data.prices.currency_symbol}${sPrice.slice(0, sPrice.length-data.prices.currency_minor_unit)}${data.prices.currency_decimal_separator}${sPrice.slice(sPrice.length - data.prices.currency_minor_unit)}</p>
         `;
     }
 };
@@ -69,11 +70,11 @@ function createCarouselItem(el) {
 function createMainItem(el) {
     const homeHero = document.querySelector(".home-hero");
     const carouselWrapper = document.querySelector(".carousel-wrapper");
-    homeHero.style.backgroundImage = "url(" + el.image + ")";
+    homeHero.style.backgroundImage = "url(" + el.images[0].src + ")";
     carouselWrapper.setAttribute("href", "../games/template.html?id=" + el.id + "&title=" + el.title);
     carouselWrapper.innerHTML = `
     <div class="carousel-text">
-        <h3>${el.title}</h3>
+        <h3>${el.name}</h3>
         <p>${el.description}</p>
     </div>
     <div>
@@ -101,11 +102,11 @@ export function createSellItem(el) {
     const sellItem = document.createElement("div");
     sellItem.innerHTML = `
     <a class="sale-image"
-    style="background-image: url(${el.image})"
+    style="background-image: url(${el.images[0].src})"
     href="games/template.html?id=${el.id}">
     </a>
     <div class="sale-tag">
-        <p>${discountPercent(el.price, el.discountedPrice)}%</p>
+        <p>${discountPercent(el.prices.regular_price, el.prices.sale_price)}%</p>
     </div>
     `
     return sellItem;
@@ -182,7 +183,7 @@ function reloadPage(data) {
     }
     let checker = (arr , target) => target.every(v => arr.includes(v));
     for (let i = 0; i < data.length; i++) {
-        if(checker([data[i].genre.toLowerCase()] , genreList) && saleStatus(data[i].onSale)) {
+        if(checker([data[i].categories[0].name.toLowerCase()] , genreList) && saleStatus(data[i].on_sale)) {
             createGameCard(data[i]);
         }
     }
@@ -204,6 +205,40 @@ export function createRowElements(data) {
     data.forEach((element) => {
         createGameCard(element);
     });
+}
+export function createGameCard(el) {
+
+    const container = document.querySelector(".game-list");
+    const card = document.createElement("a");
+
+    card.setAttribute("class", "game-container " + el.categories[0].name.toLowerCase());
+    card.href = "../../games/template.html?id=" + el.id + "&title=" + el.name;
+    card.innerHTML = `<h3>${el.name}</h3>
+   <div class="game-container_image" style="background-image: url(${el.images[0].src})"></div>
+   <div class=game-container_background>
+    <div class= "game-container_console">
+        <img src="${"../../images/playbox_logo.jpg"}" alt="for playbox"></img>
+        ${getRating(el)}
+    </div>
+   </div>
+   <div class="game-container_discount">${createPrice(el)}</div>`;
+    container.append(card);
+}
+
+function getRating(el) {
+    const starRating = document.createElement("div");
+    for ( let i= 0 ; i < 5 ; i++){
+        const star = document.createElement("i");
+        star.className ="fas fa-star";
+        starRating.append(star);
+    }
+    starRating.append("(0)")
+    return `<i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    (0)`;
 }
 
 

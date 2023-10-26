@@ -1,5 +1,4 @@
-import { createBackground, createPricetag , createImageElement} from "../functions/createElement.js";
-const url = "https://api.noroff.dev/api/v1/gamehub"
+const url = "https://dev.malke.no/wp-json/wc/store/products"
 
 
 export async function makeApiCall() {
@@ -15,24 +14,6 @@ export async function makeApiCall() {
         console.log(error);
         errorMessage();
     }
-}
-
-export function createGameCard(el) {
-    const container = document.querySelector(".game-list");
-    const card = document.createElement("a");
-    card.setAttribute("class", "game-container " + el.genre.toLowerCase());
-    card.href = "../../games/template.html?id=" + el.id + "&title=" + el.title;
-
-    card.innerHTML = `<h3>${el.title}</h3>`;
-    const background = createBackground();
-    const imageContainer = createImageElement(el.image);
-    const priceTag = createPricetag(el);
-
-    card.append(imageContainer);
-    card.append(background);
-    card.append(priceTag);
-
-    container.append(card);
 }
 
 export function showLoadingIndicator() {

@@ -13,7 +13,7 @@ search.addEventListener("input" , function() {
     if (sValue.length > 0) {
         searchResults.classList.add("results");
         listOfGames.forEach(el => {
-            if (el.title.toLowerCase().substr(0,sValue.length) === sValue) {
+            if (el.name.toLowerCase().substr(0,sValue.length) === sValue) {
                 let gameTitle = document.createElement("div");
                 gameTitle.classList.add("search-card");
                 gameTitle.innerHTML = searchItem(el);

@@ -11,7 +11,7 @@ const gamesId = params.get("id");
 const gameTitle = params.get("title");
 const pageTitle = document.getElementById("page-title");
 pageTitle.textContent = "Game Hub | " + gameTitle;
-const url = "https://api.noroff.dev/api/v1/gamehub/" + gamesId;
+const url = "https://dev.malke.no/wp-json/wc/store/products/" + gamesId;
 
 async function getGameData() {
     try {
@@ -28,25 +28,25 @@ async function getGameData() {
 
 function createHtml(data) {
   const imageContainer = document.querySelector(".product_images");
-  imageContainer.innerHTML = `<img src="${data.image}"></img>`
+  imageContainer.innerHTML = `<img src="${data.images[0].src}"></img>`
 
   const options = document.getElementsByName("buy-sell");
   options.forEach((option) => {
     option.addEventListener("change" , (event) => {
       if (option.value === "buy-option") {
         gameDescription.innerHTML = `
-        <h1>${data.title}</h1>
+        <h1>${data.name}</h1>
         <h2>${data.description}</h2>
-        <div class="game-container_discount">${createPrice(data)}</div>
+        <div class="price-tag">${createPrice(data)}</div>
         <button class="button">Add to cart</button>
         <div class="tags">
-          <p>${data.genre}</p>
+          <p>${data.categories[0].name}</p>
         </div>
         `
         addToCart(data);  
       } else {
         gameDescription.innerHTML = `
-        <h1>${data.title}</h1>
+        <h1>${data.name}</h1>
         <div>
           <h2>New condition get up to:</h2>
           ${getSellPrice(data,50)}
@@ -62,18 +62,18 @@ function createHtml(data) {
   })
   
   gameDescription.innerHTML = `
-  <h1>${data.title}</h1>
+  <h1>${data.name}</h1>
   <h2>${data.description}</h2>
-  <div class="game-container_discount">${createPrice(data)}</div>
+  <div class="price-tag">${createPrice(data)}</div>
   <button class="button">Add to cart</button>
   <div class="tags">
-    <p>${data.genre}</p>
+    <p>${data.categories[0].name}</p>
   </div>
   `
   additionInformation.innerHTML = `
   <div>
     <h2>Parental advisory</h2>
-    <p>${data.ageRating}</p>
+    <p>${getAttribute(data,3)}</p>
   </div>
   <div>
     <h2>System requirments</h2>
@@ -81,7 +81,7 @@ function createHtml(data) {
   </div>
   <div>
     <h2>Additional information</h2>
-    <p>Release date: ${data.released}</p>
+    <p>Release date: ${getAttribute(data,2)}</p>
     <p>developer:</p>
   </div>
   `
@@ -110,11 +110,13 @@ function addToCart(data) {
 }
 
 function getSellPrice(data , percent) {
-  let sellPrice = 0;
-  if (data.onSale) {
-    sellPrice = (data.discountedPrice/100)*percent;
-  } else {
-    sellPrice = (data.price/100)*percent;
-  }
-  return `<p class="price">$${sellPrice.toFixed(2)}</p>`
+  let sellPrice = ((data.prices.price/100)*percent).toFixed(0);
+  
+  return `<p class="price">${data.prices.currency_symbol}${sellPrice.slice(0, sellPrice.length-data.prices.currency_minor_unit)}${data.prices.currency_decimal_separator}${sellPrice.slice(sellPrice.length - data.prices.currency_minor_unit)}</p>`  
+}
+
+let getAttribute = (data , id) => {
+  /* find id for attribute from the api*/
+  const attribute = data.attributes.find(item => item.id === id);
+  return attribute.terms[0].name;
 }

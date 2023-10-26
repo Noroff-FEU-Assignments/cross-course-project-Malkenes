@@ -1,4 +1,5 @@
 import {load, save , updateCartItemCount} from "./functions/cart.js"
+import { createPrice } from "./modules/elementGenerator.js";
 const container = document.querySelector(".checkout-products");
 let totalContainer = document.querySelector("#total");
 let shoppingCart = load("cart");
@@ -7,38 +8,28 @@ let generateShop = () => {
     return (container.innerHTML = shoppingCart.map((item)=>{
         return `
         <div class="checkout-product" id=${item.data.id}>
-            <div class="checkout_image" style="background-image: url(${item.data.image})"></div>
-            <h3>${item.data.title}</h3>
+            <div class="checkout_image" style="background-image: url(${item.data.images[0].src})"></div>
+            <h3>${item.data.name}</h3>
             <div class="trash">
                 <div class="row">
                     <i class="fas fa-plus" data-id=${item.data.id}></i>
-                    <p id=${item.data.title.split(" ").join("")}>${item.quantity}</p>
+                    <p id=${item.data.name.split(" ").join("")}>${item.quantity}</p>
                     <i class="fas fa-minus" data-id=${item.data.id}></i>
                 </div>
                 <i class="fas fa-trash" data-id=${item.data.id}></i>
             </div>
             ${createPrice(item.data)}
+            <p class="discount">${discountPercent(item.data.prices.regular_price , item.data.prices.price)}</p>
         </div>
     `
     }).join(""));
 }
-
-let createPrice = (data) => {
-    if (data.onSale) {
-        return `
-            <p class="price">$${data.discountedPrice}</p>
-            <p class="old-price">$${data.price}</p>
-            <p class="discount">${discountPercent(data.price , data.discountedPrice)}%</p>
-            `
-            
-    } else {
-        return `<div class="price-container">
-        <p class="price">$${data.price}</p>
-        </div>`
-    }
-}
 let discountPercent = (price , newPrice) => {
-    return (((price - newPrice)*100)/price).toFixed(2)
+    if (price != newPrice) {
+        return (((price - newPrice)*100)/price).toFixed(2)+"%"
+    }else {
+        return "";
+    }
 }
 generateShop();
 
@@ -94,12 +85,12 @@ let totalPrice = () => {
     let price = 0;
     let oldPrice = 0;
     shoppingCart.forEach((element) => {
-        if(element.data.onSale) {
-            price += element.data.discountedPrice*element.quantity;
-            oldPrice += element.data.price*element.quantity;
+        if(element.data.on_sale) {
+            price += element.data.prices.sale_price*element.quantity;
+            oldPrice += element.data.prices.regular_price*element.quantity;
         } else {
-            price += element.data.price*element.quantity;
-            oldPrice += element.data.price*element.quantity;
+            price += element.data.prices.regular_price*element.quantity;
+            oldPrice += element.data.prices.regular_price*element.quantity;
         }
     })
     price = price.toFixed(2);

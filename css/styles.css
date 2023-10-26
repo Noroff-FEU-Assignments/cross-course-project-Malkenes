@@ -155,7 +155,6 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 h1 {
@@ -209,6 +208,7 @@ main {
     grid-template-rows: auto;
     gap: 16px;
     flex: 1;
+    min-height: 100vh;
 }
 .recommended-games {
     display: grid;
@@ -603,7 +603,10 @@ form select {
     padding: 8px;
     margin: 8px 8px 8px 0;
 }
-
+.price-tag {
+    display: flex;
+    gap: 16px;
+}
 .product_images img {
     object-fit: cover;
     position: center;
@@ -626,10 +629,14 @@ textarea {
 }
 
 /* browse games */
+.browse {
+    display: grid;
+    gap: 16px;
+}
 .browse-list {
     display: flex;
     flex-direction: column;
-    background-color: #00000071;
+    align-items: flex-end;
     gap: 16px;
     padding: 16px;
 }
@@ -673,14 +680,14 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    justify-content: center;
+    width: 100%;
 }
 .game-container {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 160px;
-    height: 280px;
+    width: calc(50% - 8px);
+    max-height: 400px;
 }
 
 .game-container h3 {
@@ -699,7 +706,7 @@ fieldset {
 }
 .game-container_image {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 2/3;
     background-size: cover;
     background-position: center;
 }
@@ -716,8 +723,8 @@ fieldset {
 }
 .game-container_discount {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 200px;
 }
 
 /* sign in */
@@ -897,8 +904,7 @@ fieldset {
         display: none;
     }
     .game-container {
-        width: 200px;
-        height: 320px;
+        width: calc(33% - 9px);
     }
     .game-container:hover h3 {
         display: block;
@@ -993,5 +999,8 @@ fieldset {
         width: 1200px;
         margin: 16px auto;
     }
-    
+    .game-container {
+        width: calc(25% - 12px);
+    }
+
 }
