@@ -607,12 +607,13 @@ form select {
     display: flex;
     gap: 16px;
 }
-.product_images img {
-    object-fit: cover;
-    position: center;
+.product_images {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
-    max-height: 500px;
     border-radius: 16px;
+    min-height: 400px;
 }
 .gameplay_images img {
     width: 65px;
@@ -687,6 +688,7 @@ fieldset {
     display: flex;
     flex-direction: column;
     width: calc(50% - 8px);
+    min-width: 150px;
     max-height: 400px;
 }
 

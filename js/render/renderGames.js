@@ -1,4 +1,4 @@
-const url = "https://dev.malke.no/wp-json/wc/store/products"
+const url = "https://dev.malke.no/wp-json/wc/store/products?per_page=15"
 
 
 export async function makeApiCall() {

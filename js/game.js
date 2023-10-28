@@ -28,7 +28,8 @@ async function getGameData() {
 
 function createHtml(data) {
   const imageContainer = document.querySelector(".product_images");
-  imageContainer.innerHTML = `<img src="${data.images[0].src}"></img>`
+  imageContainer.style.backgroundImage = `url(${data.images[0].src})`
+  //imageContainer.innerHTML = `<img src="${data.images[0].src}"></img>`
 
   const options = document.getElementsByName("buy-sell");
   options.forEach((option) => {
@@ -40,7 +41,7 @@ function createHtml(data) {
         <div class="price-tag">${createPrice(data)}</div>
         <button class="button">Add to cart</button>
         <div class="tags">
-          <p>${data.categories[0].name}</p>
+          ${data.categories.map(function(category) { return `<p>${category.name}</p>`;}).join("")}
         </div>
         `
         addToCart(data);  
@@ -67,7 +68,7 @@ function createHtml(data) {
   <div class="price-tag">${createPrice(data)}</div>
   <button class="button">Add to cart</button>
   <div class="tags">
-    <p>${data.categories[0].name}</p>
+    ${data.categories.map(function(category) { return `<p>${category.name}</p>`;}).join("")}
   </div>
   `
   additionInformation.innerHTML = `

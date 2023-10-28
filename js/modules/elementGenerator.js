@@ -70,7 +70,7 @@ function createCarouselItem(el) {
 function createMainItem(el) {
     const homeHero = document.querySelector(".home-hero");
     const carouselWrapper = document.querySelector(".carousel-wrapper");
-    homeHero.style.backgroundImage = "url(" + el.images[0].src + ")";
+    homeHero.style.backgroundImage = "url(" + el.images[1].src + ")";
     carouselWrapper.setAttribute("href", "../games/template.html?id=" + el.id + "&title=" + el.title);
     carouselWrapper.innerHTML = `
     <div class="carousel-text">
@@ -183,12 +183,20 @@ function reloadPage(data) {
     }
     let checker = (arr , target) => target.every(v => arr.includes(v));
     for (let i = 0; i < data.length; i++) {
-        if(checker([data[i].categories[0].name.toLowerCase()] , genreList) && saleStatus(data[i].on_sale)) {
+        var categoryList = [];
+        data[i].categories.forEach((element) => {categoryList.push(element.name.toLowerCase())});
+        if(checker(categoryList , genreList) && saleStatus(data[i].on_sale)) {
             createGameCard(data[i]);
         }
     }
     if (container.innerHTML === "") {
         container.innerHTML = "<p>no matches</p>"
+    }
+    const chosenCategroy = document.querySelector(".category-chosen");
+    if (genreList.length > 0) {
+        chosenCategroy.textContent = "( " +genreList.length + " )";
+    } else {
+        chosenCategroy.textContent = "";
     }
 }
 
@@ -218,7 +226,7 @@ export function createGameCard(el) {
    <div class=game-container_background>
     <div class= "game-container_console">
         <img src="${"../../images/playbox_logo.jpg"}" alt="for playbox"></img>
-        ${getRating(el)}
+        <div>${getRating(el)}</div>
     </div>
    </div>
    <div class="game-container_discount">${createPrice(el)}</div>`;
