@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="view our selection of games">
+  <title>Game Hub | Browse</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
+
+    <!-- Hotjar Tracking Code for my site -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3658498,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="icon-li">
+          <label for="menu-checkbox" class="hamburger-icon" aria-label="menu"><i class="fas fa-bars"></i></label>
+        </li>
+        <input type="checkbox" id="menu-checkbox">
+        <div class="nav-links">
+          <li><a href="browse_games.html">BROWSE</a></li>
+          <li><a href="sell_games.html">SELL</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+        </div>
+        <li class="logo-li">
+          <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+        </li>
+        <li>
+          <a href="checkout.html" aria-label="checkout">
+            <i class="fas fa-bag-shopping">
+              <div id="current-cart"></div>
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
+        </li>
+        <li class="search-li">
+          <div class="search-container">
+            <input type="search" name="" id="search" placeholder="search" aria-label="search">
+            <div class="search-results" id="search-results"></div>
+          </div> 
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main style="display: block;">
+    <div id="loading-indicator"></div>
+    <section class="page-header">
+      <h1>Browse</h1>
+    </section>
+    <section class="browse">
+      <div class="filter">
+        <input type="checkbox" name="console" id="console-checkbox">
+        <input type="checkbox" id="category-checkbox">
+        <div class="filter_mobile">
+          <label for="console-checkbox" class="console-icon">choose console <span class="console-chosen"></span></label>
+          <label for="category-checkbox" class="category-icon">choose category <span class="category-chosen"></span></label>
+        </div>
+        <fieldset class="boxed choose-console">
+          <legend>Console</legend>
+          <input type="checkbox" id="playbox" name="console" value="playbox">
+          <label for="playbox">PLAYBOX</label>
+          <input type="checkbox" id="windows" name="console" value="windows">
+          <label for="windows">WINDOWS</label>
+          <input type="checkbox" id="mac" name="console" value="mac">
+          <label for="mac">MAC</label>
+          <input type="checkbox" id="psp" name="console" value="psp">
+          <label for="psp">PSP</label>
+        </fieldset>
+        <fieldset class="boxed choose-category">
+          <legend>Category</legend>
+          <input type="checkbox" id="on-sale" value="on-sale">
+          <label for="on-sale" style="color: chartreuse;">ON SALE</label>
+          <input type="checkbox" id="action" name="category" value="action">
+          <label for="action">ACTION</label>
+          <input type="checkbox" id="adventure" name="category" value="adventure">
+          <label for="adventure">ADVENTURE</label>
+          <input type="checkbox" id="sports" name="category" value="sport">
+          <label for="sports">SPORT</label>
+          <input type="checkbox" id="horror" name="category" value="horror">
+          <label for="horror">HORROR</label>
+          <input type="checkbox" id="for-children" name="category" value="for-children">
+          <label for="for-children">FOR CHILDREN</label>
+          <input type="checkbox" id="adult" name="category" value="adult">
+          <label for="adult">ADULT</label>
+          <input type="checkbox" id="simulation" name="category" value="simulation">
+          <label for="simulation">SIMULATION</label>
+          <input type="checkbox" id="relaxed" name="category" value="relaxed">
+          <label for="relaxed">RELAXED</label>
+          <input type="checkbox" id="open-world" name="category" value="open-world">
+          <label for="open-world">OPEN WORLD</label>
+        </fieldset>
+      </div>
+      <div class="browse-list">
+        <div>
+          <select name="Sort-by" id="sort-by" aria-label="sort by">
+            <option value="sort-by">Sort by</option>
+            <option value="price-lh">Price low-high</option>
+            <option value="price-hl">Price high-low</option>
+            <option value="name-az">Name A-Z</option>
+            <option value="name-za">Name Z-A</option>
+          </select>
+        </div>
+        <div class="game-list"></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
+      <li>For buyers</li>
+      <li>How to buy</li>
+      <li>Terms & conditions</li>
+      <li>Sitemap</li>
+    </ul>
+    <ul class="sellers">
+      <li>For sellers</li>
+      <li>How to sell</li>
+      <li>Buisness info</li>
+    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
+  </footer>
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>

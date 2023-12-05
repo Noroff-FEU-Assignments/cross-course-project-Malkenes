@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GameHub a marketplace that lets you buy tons of videogames online for any device">
+  <title>Game Hub | Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
+
+  <!-- Hotjar Tracking Code for my site -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3658498,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="icon-li">
+          <label for="menu-checkbox" class="hamburger-icon" aria-label="menu"><i class="fas fa-bars"></i></label>
+        </li>
+        <input type="checkbox" id="menu-checkbox">
+        <div class="nav-links">
+          <li><a href="browse_games.html">BROWSE</a></li>
+          <li><a href="sell_games.html">SELL</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+        </div>
+        <li class="logo-li">
+          <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+        </li>
+        <li>
+          <a href="checkout.html" aria-label="checkout">
+            <i class="fas fa-bag-shopping">
+              <div id="current-cart"></div>
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
+        </li>
+        <li class="search-li">
+          <div class="search-container">
+            <input type="search" name="" id="search" placeholder="search" aria-label="search">
+            <div class="search-results" id="search-results"></div>
+          </div> 
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="index-main">
+    <div id="loading-indicator"></div>
+    <section class="home-hero">
+      <h1>Welcome to GameHub</h1>
+      <h2>New on gamehub</h2>
+      <a class="carousel-wrapper">
+      </a>
+    </section>
+    <div class="carousel-navbar">
+    </div>
+    <section class="promoted">
+      <h2><span id="today-day"></span> SALE</h2>
+      <div class="sale-promotion">
+        <h3>Time left</h3>
+        <div class="timer">
+          <div>
+            <p id="hours"></p>
+            <p>hour</p>
+          </div>
+          <div>
+            <p id="minutes"></p>
+            <p>min</p>
+          </div>
+          <div>
+            <p id="seconds"></p>
+            <p>sec</p>
+          </div>
+        </div>
+        <button class="button" id="all-sales">All sales</button>
+      </div>
+      <div class="sales">  
+      </div>
+    </section>
+    <section class="browse-by-category">
+      <h2>BROWSE BY CATEGORY</h2>
+      <ul class="category">
+        <li id="action">ACTION</li>
+        <li id="adventure">ADVENTURE</li>
+        <li id="sports">SPORT</li>
+        <li id="horror">HORROR</li>
+        <li id="for-children">FOR CHILDREN</li>
+        <li id="adult">ADULT</li>
+        <li id="simulation">SIMULATION</li>
+        <li id="relaxed">RELAXED</li>
+        <li id="open-world">OPEN WORLD</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
+      <li>For buyers</li>
+      <li>How to buy</li>
+      <li>Sitemap</li>
+    </ul>
+    <ul class="sellers">
+      <li>For sellers</li>
+      <li>How to sell</li>
+      <li>Buisness info</li>
+    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
+  </footer> 
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>

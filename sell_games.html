@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sell your games here">
+  <title>Game Hub | Sell</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;900&family=Roboto:ital@1&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/6a870feefe.js" crossorigin="anonymous"></script>
+
+  <!-- Hotjar Tracking Code for my site -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3658498,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="icon-li">
+          <label for="menu-checkbox" class="hamburger-icon" aria-label="menu"><i class="fas fa-bars"></i></label>
+        </li>
+        <input type="checkbox" id="menu-checkbox">
+        <div class="nav-links">
+          <li><a href="browse_games.html">BROWSE</a></li>
+          <li><a href="sell_games.html">SELL</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+        </div>
+        <li class="logo-li">
+          <a href="index.html"><img src="images/logo_small.png" alt="Logo for gamehub" class="logo"></a>
+        </li>
+        <li>
+          <a href="checkout.html" aria-label="checkout">
+            <i class="fas fa-bag-shopping">
+              <div id="current-cart"></div>
+            </i>
+          </a>
+        </li>
+        <li>
+          <a href="sign_in.html" aria-label="sign in/sign up"><i class="fas fa-circle-user"></i></a>
+        </li>
+        <li class="search-li">
+          <div class="search-container">
+            <input type="search" name="" id="search" placeholder="search" aria-label="search">
+            <div class="search-results" id="search-results"></div>
+          </div> 
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main style="display: block;">
+    <div id="loading-indicator"></div>
+    <section class="page-header">
+      <h1>Sell</h1>
+    </section>
+    <section class="sell-instructions">
+      <div class="boxed">
+        <div class="overlay">1</div>
+        <h2>List your games</h2>
+        <p>Log in to your Gamehub account</p>
+        <p>Find the game you want to sell</p>
+        <p>Choose the condition of your game</p>
+        <p>Upload clear images of the game and its packaging</p>
+        <p>Set your preferred shipping options and policies (e.g., shipping cost, return policy).</p>
+      </div>
+      <div class="boxed">
+        <div class="overlay">2</div>
+        <h2>Manage your listings</h2>
+        <p>Regularly check your seller dashboard for messages and notifications.</p>
+        <p>Keep your game listings up to date. If a game is sold, mark it as "sold" or remove it.</p>
+        <p>Adjust your prices and listings based on market demand and competition.</p>
+      </div>
+      <div class="boxed">
+        <div class="overlay">3</div>
+        <h2>Complete Sales and Ship Games</h2>
+        <p>When a buyer makes a purchase, you'll receive a notification.
+        </p>
+        <p>Carefully package the game to ensure it arrives in the condition described.
+        </p>
+        <p>Ship the game to the buyer using the selected shipping method.
+        </p>
+        <p>Update the order status and provide tracking information if available.
+        </p>
+        <p>Be transparent about the estimated delivery time.
+        </p>
+      </div>
+      <div class="boxed">
+        <div class="overlay">4</div>
+        <h2>Receive payment</h2>
+        <p>Gamehub typically releases funds to sellers after successful delivery and a satisfied buyer.
+        </p>
+        <p>Payment methods may include direct deposits, PayPal, or other payment gateways.
+
+        </p>
+      </div>
+    </section>    
+  </main>
+  <footer>
+    <p> copyright &copy; all rights reserved</p>
+    <ul class="buyers">
+      <li>For buyers</li>
+      <li>How to buy</li>
+      <li>Terms & conditions</li>
+      <li>Sitemap</li>
+    </ul>
+    <ul class="sellers">
+      <li>For sellers</li>
+      <li>How to sell</li>
+      <li>Buisness info</li>
+    </ul>
+    <div class="social-media">
+      <p>follow us on socials</p>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-tiktok"></i>
+    </div>
+  </footer> 
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
